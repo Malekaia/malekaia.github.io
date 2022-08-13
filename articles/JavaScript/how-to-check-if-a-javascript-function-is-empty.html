@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/bootstrap-5.2.0.min.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/bootstrap-icons-1.8.3.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/prism-1.28.0.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/app.css" />
+  <title>How to check if a JavaScript function is empty | Malekaia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500;700&family=IBM+Plex+Serif:wght@300;400;500;700&display=swap" />
+
+  <meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+  <meta name="keywords" content="javascript&#44&#59;function&#44&#59;void&#44&#59;empty&#44&#59;string&#44&#59;manipulation&#44&#59;callback&#44&#59;check&#44&#59;conditional&#44&#59;statements&#44&#59;scope&#44&#59;block" /><meta name="category" content="JavaScript" />
+       <meta name="topic" content="Empty Functions" /><meta name="revised" content="03/05/2022" />
+       <meta name="date" content="03/05/2022" /><meta name="pagename" content="How to check if a JavaScript function is empty" />
+       <meta name="title" content="How to check if a JavaScript function is empty" /><meta name="description" content="A not so resourceful way of dealing with empty voids" />
+       <meta name="abstract" content="A not so resourceful way of dealing with empty voids" /><meta name="summary" content="A not so resourceful way of dealing with empty voids" />
+       <meta name="subtitle" content="A not so resourceful way of dealing with empty voids" /><meta name="syndication-source" content="" />
+       <meta name="original-source" content="" /><meta name="og:type" content="Misc" />
+       <meta name="og:title" content="How to check if a JavaScript function is empty" /><meta name="og:description" content="A not so resourceful way of dealing with empty voids" />
+       <meta name="og:url" content="" /><meta name="og:image" content="/images/tijs&#45&#59;van&#45&#59;leur&#58&#59;ox9Y&#45&#59;Ad&#45&#59;&#45&#59;&#95;k&#45&#59;unsplash&#46&#59;jpg" />
+       <link rel="bookmark" title="How to check if a JavaScript function is empty" href="" /><link rel="canonical" href="" />
+       <link rel="self" type="application/atom+xml" href="" />
+</head>
+<body>
+  
+  
+
+
+<header class="global-header w-100 bg-dark" style="background-image: url(/images/headers/tijs-van-leur:ox9Y-Ad--_k-unsplash.jpg)">
+  <main class="header-shadow">
+    <div class="container col-10 h-100 d-flex flex-column justify-content-between align-items-center">
+      
+      <nav class="col-12 py-5 d-flex justify-content-between">
+        <h4 class="m-0"><a href="/">Malekaia</a></h4>
+        <h5 class="m-0">
+          <span class="me-2" role="button" data-bs-toggle="modal" data-bs-target="#modal-search">
+            <span class="bi bi-search"></span>
+          </span>
+          <a class="me-2 d-none d-sm-inline" href="https://github.com/Malekaia" title="Github" target="_blank" rel="noopener">
+            <span class="bi bi-github"></span>
+          </a>
+          <a class="me-2" href="https://stackoverflow.com/users/10415695/Malekai" title="StackOverflow" target="_blank" rel="noopener">
+            <span class="bi bi-stack-overflow"></span>
+          </a>
+          <a class="me-2" href="https://twitter.com/Melekaia" title="Twitter" target="_blank" rel="noopener">
+            <span class="bi bi-twitter"></span>
+          </a>
+          <a href="https://www.reddit.com/user/Malekaia" title="Reddit" target="_blank" rel="noopener">
+            <span class="bi bi-reddit"></span>
+          </a>
+        </h5>
+      </nav>
+      
+
+      
+      <section class="col-12 py-5">
+        
+        
+          <p class="mb-3"><span class="text-contrast"><b>Misc</b> &sol; JavaScript &sol; Empty Functions</span></p>
+          <h2 class="mb-2"><span class="text-contrast">How to check if a JavaScript function is empty</span></h2>
+          <p class="lead mb-3"><span class="text-contrast">A not so resourceful way of dealing with empty voids</span></p>
+          <div class="small d-flex justify-content-between">
+            <span class="text-contrast d-sm-none small">By <a class="text-white" href="https://twitter.com/Melekaia" title="@Melekaia">Malekai</a>, 03/05/2022</span>
+            <span class="text-contrast d-sm-none small">8 minute read</span>
+            <span class="text-contrast d-none d-sm-inline">By <a class="text-white" href="https://twitter.com/Melekaia" title="@Melekaia">Malekai</a> &bull; 8 minute read</span>
+            <span class="text-contrast d-none d-sm-inline">03/05/2022</span>
+          </div>
+        
+      </section>
+      
+    </div>
+  </main>
+</header>
+  <main class="container-fluid container-md py-5">
+    <section class="row col-lg-11 my-0 mx-auto">
+      
+      <aside class="col-12 col-lg-3 mb-5 mb-lg-0 ps-lg-0 pb-lg-0">
+        <div class="row">
+          
+          <div class="order-1 order-lg-2 col-6 col-lg-12">
+            <h5 class="mb-2">Table of contents:</h5>
+            <section class="table-of-contents"><a href="#introduction" data-level="3">Introduction</a><a href="#string-manipulation" data-level="3">String manipulation</a><a href="#regular-expressions" data-level="3">Regular expressions</a><a href="#closing-thoughts" data-level="3">Closing thoughts</a></section>
+          </div>
+          
+          <div class="order-2 order-lg-1 col-6 col-lg-12 mb-0 mb-lg-3">
+            <h5>Author:</h5>
+            <figure class="col-12 d-flex justify-content-start align-items-center">
+              <img class="rounded" height="64px" src="/images/favicon.png" width="64px">
+              <nav class="ps-3 pt-0">
+                <h5 class="d-block fw-light mb-0">Malekai</h5>
+                <a class="d-block" href="https://github.com/Malekaia">@Malekaia</a>
+                <small class="text-muted">BSc, FyEng, DipEng</small>
+              </nav>
+            </figure>
+          </div>
+        </div>
+      </aside>
+      
+      <article class="col-12 col-lg-9">
+        <section id="blog-article">
+<h3 id="introduction" class="text-title">Introduction:</h3>
+<p>I recently came across <a href="https://stackoverflow.com/q/7960335/10415695">a question</a> on StackOverflow. It's a few years old, but struck me as bizarre enough that I decided to write about it. The gist of the question in question (<i>pun intended</i>) is empty functions in JavaScript, specifically: if it's possible to detect them.</p>
+<p>The reason why I find it bizarre is because the assumptions of the <i>reason(s) why</i> you'd want to do this are negated by the implementation of the <i>"solution"</i>, and despite <i>"working"</i> - again, I say that with emphasis - there are better ways of handling those scenarios.</p>
+<p>For example, say you wanted to <i>check if a function is empty to avoid running it</i>. The question is why? If it's to improve performance, you'd be better off letting it <a href="https://en.wikipedia.org/wiki/Fail-safe#Electrical_or_electronic">fail safe</a> after checking if the function returned nothing using an <code>if</code> condition. In fact you'd be using more resources to check if the function is empty than you would letting an empty function do nothing.</p>
+<p>Simply put, why waste resources on checking if something that might do nothing does nothing? The correct way to handle this situation is to determine what to do if it does something and how to let it fail safe if it does nothing.</p>
+<p>Well, what if you wanted to <i>avoid passing a void function to another function</i> or <i>needed a function to return something</i>? Once again, these scenarios are better handled by a combination of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">if conditions</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a>/<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">instanceof</a> checks and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality">equality operators</a>.</p>
+<p>But, I'm not here to talk you out of this so lets get started.</p>
+<h3 id="string-manipulation" class="text-title">String manipulation:</h3>
+<p>In JavaScript you can turn pretty much anything into a string: <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/toString" title="Boolean.prototype.toString">Booleans</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString" title="Number.prototype.toString">Numbers</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString" title="Array.prototype.toString">Arrays</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" title="Object.prototype.toString">Objects</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/toString" title="Error.prototype.toString">Errors</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString" title="Date.prototype.toString">Dates</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/toString" title="URL.toString">URLs</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/toString" title="URLSearchParams.toString">URL Search Parameters</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" title="JSON.stringify">JSON</a>, a <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/parseFromString" title="DOMParser.parseFromString">DOM</a> and <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer" title="XMLSerializer">XML</a>. Heck, you could even get the string version of a string from <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString" title="String.prototype.toString">String.prototype.toString</a>.</p>
+<p>Most built-in types, objects and classes implement the <code>toString()</code> method, including the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a> object: <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString">Function.prototype.toString</a>.</p>
+<p>This is great because it allows us to use string manipulation to determine if there are any statements, expressions or declarations in a function and because all javascript function bodies follow the same syntax - an opening curly brace that has a matching closing curly brace - we can easily isolate the function's body using the <code>indexOf()</code> and <code>lastIndexOf()</code> methods:</p>
+<ol>
+  <li>Use the <code>toString()</code> method to return the function as a string</li>
+  <li>Remove new lines and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">trim off leading and trailing whitespace</a>
+  </li>
+  <li>Find the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">index of the first instance</a> of an opening curly brace
+  </li>
+  <li>Find the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">index of the last instance</a> of a closing curly brace
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring">Remove the characters</a> before/after those curly braces (inclusive)
+  </li>
+  <li>Trim the resulting string</li>
+  <li>If it's length is greater than <code>0</code> return <code>false</code>, otherwise return <code>true</code></li>
+</ol>
+<p>To demonstrate, we'll need a few sample functions with varying indentation:</p>
+<pre class="language-javascript"><code class="language-javascript">const f1 = function()
+ { }
+;
+const f2 = function wow()
+{
+
+};
+const f3 = function amazing (a) {
+  };
+function f4(a, b) {
+  const i = 1;
+  return i + 1;
+};</code></pre>
+<p>And the function, implemented as such:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // convert the function into a string
+  // remove the new lines
+  // trim leading and trailing whitespace
+  const string_fn = fn.toString().replace(/\n+/g, "").trim();
+
+  // get the first index of an opening curly brace
+  const first_index = string_fn.indexOf("{");
+
+  // remove that curly brace and everything before it from the body of the function
+  let body = string_fn.substring(first_index + 1);
+
+  // get the last index of a closing curly brace
+  const last_index = body.lastIndexOf("}");
+
+  // remove that curly brace and everything after it from the body of the function
+  body = body.substring(0, last_index);
+
+  // remove leading and trailing whitespace from the function body
+  body = body.trim();
+
+  // return true if the string is empty, false if not
+  return !!(body.length &lt; 1);
+}</code></pre>
+<p>Which, when called:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log(is_fn_empty(f1));
+console.log(is_fn_empty(f2));
+console.log(is_fn_empty(f3));
+console.log(is_fn_empty(f4));
+</code></pre>
+<p>Produces the following output:</p>
+<pre class="language-shell"><code class="language-shell">true
+true
+true
+false</code></pre>
+<p>We could simplify the <code>is_fn_empty</code> function and have it work exactly the same.</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // convert the function into a string
+  // remove new lines from the string
+  // trim leading and trailing whitespace from the string
+  const string_fn = fn.toString().replace(/\n+/g, "").trim();
+
+  // get the first and last index of an opening and a closing brace
+  const [first_index, last_index] = [string_fn.indexOf("{"), string_fn.lastIndexOf("}")];
+
+  // remove the data before/after those braces (inclusive)
+  const body = string_fn.substring(0, last_index).substring(first_index + 1).trim();
+
+  // return true if empty, false if not
+  return !!(body.length &lt; 1);
+}</code></pre>
+<h3 id="regular-expressions" class="text-title">Regular expressions:</h3>
+<p>If you're comfortable with using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a>, you could use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers">quantifiers</a> to do the same thing using regex.</p>
+<p>For a greedy non-specific search, use <code>/\{(.*)\}/s</code> to isolate everything in between the first opening and last closing curly brace:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // the regular expression to check against
+  const re_check = /\{(.*)\}/s;
+
+  // convert the function into a string
+  // trim leading and trailing whitespace from the string
+  // remove all new lines from the string
+  const string_fn = fn.toString().trim().replace(/\n+/g, "");
+
+  // try to match the regular expression against the function string
+  const match = string_fn.match(re_check);
+
+  // if a match exists
+  if (match !== null) {
+    // get the trimmed function body
+    const body = match[1].trim();
+
+    // return true if empty and false if not
+    return !!(body.length &lt; 1);
+  }
+
+  // otherwise fail safe and return null
+  return null;
+}</code></pre>
+<p>Otherwise, for a more specific and thorough search, use <code>/^function(.*?\()(.*?\)|\)).*?\{(.*?)\}($|\;$)/</code> to isolate the function body:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // the regular expression to check against
+  const re_check = /^function(.*?\()(.*?\)|\)).*?\{(.*?)\}($|\;$)/;
+
+  // convert the function into a string
+  // trim leading and trailing whitespace from the string
+  // remove all new lines from the string
+  const string_fn = fn.toString().trim().replace(/\n+/g, "");
+
+  // try to match the regular expression against the function string
+  const match = string_fn.match(re_check);
+
+  // if a match exists
+  if (match !== null) {
+    // get the trimmed function body
+    const body = match[3].trim();
+
+    // return true if empty and false if not
+    return !!(body.length &lt; 1);
+  }
+
+  // otherwise fail safe and return null
+  return null;
+}</code></pre>
+<p>To demonstrate and test this method effectively, we'll need a test function with multiple nested <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#block_statement">block statements</a> to make sure our regular expressions aren't caught out by multiple curly braces in the function body:</p>
+<pre class="language-javascript"><code class="language-javascript">function f4(a, b) {
+  {
+    console.log("Hello");
+    {
+      console.log("World");
+    }
+  }
+  const i = 1;
+  return i + 1;
+};</code></pre>
+<p>Both functions should output the following:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log(is_fn_empty(f1)); // true
+console.log(is_fn_empty(f2)); // true
+console.log(is_fn_empty(f3)); // true
+console.log(is_fn_empty(f4)); // false
+</code></pre>
+<h3 id="closing-thoughts" class="text-title">Closing thoughts:</h3>
+<p>Although I said I wouldn't talk you out of this, please remember that this article was only written because I wanted to try and solve a bizarre problem. I wouldn't recommend you use any of these functions in production and I reiterate that there are better ways of dealing with void functions.</p>
+<p>Thank you for reading.</p></section>
+      </article>
+    </section>
+  </main>
+
+  <section id="modal-search" class="modal fade" tabindex="-1">
+  <main class="modal-dialog">
+    <section class="modal-content">
+      <nav class="modal-header">
+        <h5 class="modal-title">Search articles:</h5>
+        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+      </nav>
+      <section class="modal-body">
+        <figure class="input-group mb-4">
+          <input type="text" class="form-control search-input" placeholder="Name, category, type..." />
+        </figure>
+
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Rust</span> &sol; <span>Memory Management</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/a-brief-introduction-to-memory-management-in-rust.html">A brief introduction to memory management in Rust</a></h5>
+            <p class="lead fw-light card-text mb-1">A layman's guide to ownership, lifetimes and borrowing in Rust</p>
+            <small><span class="d-block mb-2 small"><span>05/06/2022</span> &bull; <span>11 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Networking</span> &sol; <span>Transfer Protocols</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Networking/a-non-technical-introduction-to-http-and-https.html">A non-technical introduction to HTTP and HTTPS</a></h5>
+            <p class="lead fw-light card-text mb-1">Demystifying the internet's primary communication protocol</p>
+            <small><span class="d-block mb-2 small"><span>01/06/2022</span> &bull; <span>9 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Rust</span> &sol; <span>Cargo</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/a-rustaceans-introduction-to-the-cargo-package-manager.html">A Rustaceans' introduction to the Cargo package manager</a></h5>
+            <p class="lead fw-light card-text mb-1">Creating, setting up and managing Rust projects using Cargo</p>
+            <small><span class="d-block mb-2 small"><span>03/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>CSS</span> &sol; <span>Bootstrap</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/CSS/how-to-change-the-default-font-in-bootstrap.html">How to change the default font in Bootstrap</a></h5>
+            <p class="lead fw-light card-text mb-1">Modifying default fonts without breaking your stylesheets</p>
+            <small><span class="d-block mb-2 small"><span>22/02/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Go Lang</span> &sol; <span>Regex</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Go Lang/globbing-in-go.html">Globbing in Go</a></h5>
+            <p class="lead fw-light card-text mb-1">Using regular expressions to glob directories the right way</p>
+            <small><span class="d-block mb-2 small"><span>11/03/2022</span> &bull; <span>5 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Sass</span> &sol; <span>Selectors</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Sass/how-to-extend-parent-selectors-in-sass.html">How to extend parent selectors in Sass</a></h5>
+            <p class="lead fw-light card-text mb-1">Using the Sass CSS engine to extend nested parent selectors</p>
+            <small><span class="d-block mb-2 small"><span>26/05/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>JavaScript</span> &sol; <span>Environments</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/environment-detection-in-javascript.html">Environment detection in JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">How to enable conditional code for specific environments</p>
+            <small><span class="d-block mb-2 small"><span>12/04/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Python</span> &sol; <span>PIP</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/an-introduction-to-the-pip-package-manager.html">An introduction to the PIP package manager</a></h5>
+            <p class="lead fw-light card-text mb-1">Using Python's most popular package installer</p>
+            <small><span class="d-block mb-2 small"><span>03/05/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Perl</span> &sol; <span>Subprocesses</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Perl/how-to-call-a-subprocess-in-perl.html">How to call a subprocess in Perl</a></h5>
+            <p class="lead fw-light card-text mb-1">Handling subprocess calls and responses</p>
+            <small><span class="d-block mb-2 small"><span>28/04/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Project</b> &sol; <span>Python</span> &sol; <span>Git CLI</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/how-to-avoid-retyping-the-git-keyword.html">How to avoid retyping the "Git" keyword</a></h5>
+            <p class="lead fw-light card-text mb-1">Documentation for the NoGit shell CLI</p>
+            <small><span class="d-block mb-2 small"><span>03/03/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Opinion</b> &sol; <span>Rust</span> &sol; <span>Type System</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/why-type-declarations-for-rust-constants-should-be-unnecessary.html">Why type declarations for Rust constants should be unnecessary</a></h5>
+            <p class="lead fw-light card-text mb-1">Minor inconsistencies in an otherwise perfect language</p>
+            <small><span class="d-block mb-2 small"><span>09/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Misc</b> &sol; <span>JavaScript</span> &sol; <span>Empty Functions</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-check-if-a-javascript-function-is-empty.html">How to check if a JavaScript function is empty</a></h5>
+            <p class="lead fw-light card-text mb-1">A not so resourceful way of dealing with empty voids</p>
+            <small><span class="d-block mb-2 small"><span>03/05/2022</span> &bull; <span>8 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Python</span> &sol; <span>Data Types</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/a-guide-to-python-s-data-types.html">A guide to Python's data types</a></h5>
+            <p class="lead fw-light card-text mb-1">A quick and easy cheat sheet for data types in python</p>
+            <small><span class="d-block mb-2 small"><span>08/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>DOM Manipulation</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-select-sibling-elements-using-javascript.html">How to select sibling elements using JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">Targeting siblings for DOM manipulation</p>
+            <small><span class="d-block mb-2 small"><span>01/04/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>HTML</span> &sol; <span>UX</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/HTML/how-to-open-html-links-in-new-tabs.html">How to open HTML links in new tabs</a></h5>
+            <p class="lead fw-light card-text mb-1">A good way to provide links without losing unsaved content</p>
+            <small><span class="d-block mb-2 small"><span>16/03/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>Performance Testing</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/rudimentary-performance-testing-in-javascript.html">Rudimentary performance testing in JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">A guide to estimating performance speed</p>
+            <small><span class="d-block mb-2 small"><span>02/03/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Python</span> &sol; <span>Development Servers</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/how-to-create-a-development-server-using-http-server.html">How to create a development server using HTTP Server</a></h5>
+            <p class="lead fw-light card-text mb-1">Using http.server for testing in development mode</p>
+            <small><span class="d-block mb-2 small"><span>13/05/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>Regex</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-modify-regexp-flags.html">How to modify RegExp flags</a></h5>
+            <p class="lead fw-light card-text mb-1">Using identical regular expressions with different flags</p>
+            <small><span class="d-block mb-2 small"><span>08/06/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Rust</span> &sol; <span>Installation</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/how-to-install-rust-on-unix.html">How to install Rust on UNIX</a></h5>
+            <p class="lead fw-light card-text mb-1">A guide to compiling your first Rust program</p>
+            <small><span class="d-block mb-2 small"><span>02/06/2022</span> &bull; <span>1 minute read</span></span></small>
+          </figure>
+        
+      </section>
+    </section>
+  </main>
+</section>
+  
+  
+
+
+<footer class="p-3 bg-dark text-center text-white-50">
+  <small class="d-block">&copy; <span id="current-year"></span> <a class="text-light" href="https://github.com/Malekaia/">@Malekaia</a></small>
+  <small class="d-block">Artwork courtesy of <a class="text-light" href="https://unsplash.com/s/users/Tijs Van Leur" title="Tijs Van Leur on Unsplash">Tijs Van Leur</a></small>
+</footer>
+
+<script type="text/javascript">document.getElementById("current-year").innerHTML = (new Date()).getFullYear().toString();</script>
+  
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-129459606-1"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "UA-129459606-1");
+</script>
+  <script type="text/javascript" src="/scripts/lib.js"></script>
+  <script type="text/javascript" src="/scripts/search.js"></script>
+  <script type="text/javascript" src="/scripts/vendor/bootstrap-5.1.0.min.js"></script>
+  <script type="text/javascript" src="/scripts/vendor/prism-1.28.0.js"></script>
+</body>
+</html>

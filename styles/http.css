@@ -1,0 +1,13 @@
+main {
+  width: 320px;
+  padding-top: 20%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "IBM Plex Sans";
+}
+main a {
+  display: block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #1976D2;
+}

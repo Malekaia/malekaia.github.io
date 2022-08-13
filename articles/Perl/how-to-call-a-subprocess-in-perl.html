@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/bootstrap-5.2.0.min.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/bootstrap-icons-1.8.3.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/vendor/prism-1.28.0.css" />
+  <link type="text/css" rel="stylesheet" href="/styles/app.css" />
+  <title>How to call a subprocess in Perl | Malekaia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500;700&family=IBM+Plex+Serif:wght@300;400;500;700&display=swap" />
+
+  <meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+  <meta name="keywords" content="call&#44&#59;subprocess&#44&#59;perl&#44&#59;responses&#44&#59;IO&#44&#59;archive&#44&#59;management&#44&#59;exec&#44&#59;system&#44&#59;output&#44&#59;capture" /><meta name="category" content="Perl" />
+       <meta name="topic" content="Subprocesses" /><meta name="revised" content="28/04/2022" />
+       <meta name="date" content="28/04/2022" /><meta name="pagename" content="How to call a subprocess in Perl" />
+       <meta name="title" content="How to call a subprocess in Perl" /><meta name="description" content="Handling subprocess calls and responses" />
+       <meta name="abstract" content="Handling subprocess calls and responses" /><meta name="summary" content="Handling subprocess calls and responses" />
+       <meta name="subtitle" content="Handling subprocess calls and responses" /><meta name="syndication-source" content="" />
+       <meta name="original-source" content="" /><meta name="og:type" content="Tutorial" />
+       <meta name="og:title" content="How to call a subprocess in Perl" /><meta name="og:description" content="Handling subprocess calls and responses" />
+       <meta name="og:url" content="" /><meta name="og:image" content="/images/scott&#45&#59;webb&#58&#59;udZnjsCzsE&#45&#59;unsplash&#46&#59;jpg" />
+       <link rel="bookmark" title="How to call a subprocess in Perl" href="" /><link rel="canonical" href="" />
+       <link rel="self" type="application/atom+xml" href="" />
+</head>
+<body>
+  
+  
+
+
+<header class="global-header w-100 bg-dark" style="background-image: url(/images/headers/scott-webb:udZnjsCzsE-unsplash.jpg)">
+  <main class="header-shadow">
+    <div class="container col-10 h-100 d-flex flex-column justify-content-between align-items-center">
+      
+      <nav class="col-12 py-5 d-flex justify-content-between">
+        <h4 class="m-0"><a href="/">Malekaia</a></h4>
+        <h5 class="m-0">
+          <span class="me-2" role="button" data-bs-toggle="modal" data-bs-target="#modal-search">
+            <span class="bi bi-search"></span>
+          </span>
+          <a class="me-2 d-none d-sm-inline" href="https://github.com/Malekaia" title="Github" target="_blank" rel="noopener">
+            <span class="bi bi-github"></span>
+          </a>
+          <a class="me-2" href="https://stackoverflow.com/users/10415695/Malekai" title="StackOverflow" target="_blank" rel="noopener">
+            <span class="bi bi-stack-overflow"></span>
+          </a>
+          <a class="me-2" href="https://twitter.com/Melekaia" title="Twitter" target="_blank" rel="noopener">
+            <span class="bi bi-twitter"></span>
+          </a>
+          <a href="https://www.reddit.com/user/Malekaia" title="Reddit" target="_blank" rel="noopener">
+            <span class="bi bi-reddit"></span>
+          </a>
+        </h5>
+      </nav>
+      
+
+      
+      <section class="col-12 py-5">
+        
+        
+          <p class="mb-3"><span class="text-contrast"><b>Tutorial</b> &sol; Perl &sol; Subprocesses</span></p>
+          <h2 class="mb-2"><span class="text-contrast">How to call a subprocess in Perl</span></h2>
+          <p class="lead mb-3"><span class="text-contrast">Handling subprocess calls and responses</span></p>
+          <div class="small d-flex justify-content-between">
+            <span class="text-contrast d-sm-none small">By <a class="text-white" href="https://twitter.com/Melekaia" title="@Melekaia">Malekai</a>, 28/04/2022</span>
+            <span class="text-contrast d-sm-none small">2 minute read</span>
+            <span class="text-contrast d-none d-sm-inline">By <a class="text-white" href="https://twitter.com/Melekaia" title="@Melekaia">Malekai</a> &bull; 2 minute read</span>
+            <span class="text-contrast d-none d-sm-inline">28/04/2022</span>
+          </div>
+        
+      </section>
+      
+    </div>
+  </main>
+</header>
+  <main class="container-fluid container-md py-5">
+    <section class="row col-lg-11 my-0 mx-auto">
+      
+      <aside class="col-12 col-lg-3 mb-5 mb-lg-0 ps-lg-0 pb-lg-0">
+        <div class="row">
+          
+          <div class="order-1 order-lg-2 col-6 col-lg-12">
+            <h5 class="mb-2">Table of contents:</h5>
+            <section class="table-of-contents"><a href="#introduction" data-level="3">Introduction</a><a href="#using-exec" data-level="3">Using exec()</a><a href="#using-system" data-level="3">Using system()</a><a href="#capturing-output" data-level="3">Capturing output</a></section>
+          </div>
+          
+          <div class="order-2 order-lg-1 col-6 col-lg-12 mb-0 mb-lg-3">
+            <h5>Author:</h5>
+            <figure class="col-12 d-flex justify-content-start align-items-center">
+              <img class="rounded" height="64px" src="/images/favicon.png" width="64px">
+              <nav class="ps-3 pt-0">
+                <h5 class="d-block fw-light mb-0">Malekai</h5>
+                <a class="d-block" href="https://github.com/Malekaia">@Malekaia</a>
+                <small class="text-muted">BSc, FyEng, DipEng</small>
+              </nav>
+            </figure>
+          </div>
+        </div>
+      </aside>
+      
+      <article class="col-12 col-lg-9">
+        <section id="blog-article">
+<h3 id="introduction" class="text-title">Introduction:</h3>
+<p>In programming, subprocesses can execute shell commands and start applications by creating new processes. Subprocesses create a new process (as a child to the current process) programmatically from within your source code.</p>
+<p>This tutorial explains how to call subprocesses in <a href="https://www.perl.org/">Perl</a> by demonstrating a real-world example situation (unzipping an archive using <a href="https://packages.ubuntu.com/jammy/unzip">unzip</a>). It also covers how to handle <a href="https://en.wikipedia.org/wiki/Input/output">I/O</a> (not to be confused with <a href="https://en.wikipedia.org/wiki/Io_(programming_language)">Io</a>) for subprocess outputs.</p>
+<h3 id="using-exec" class="text-title">Using exec():</h3>
+<p>The <code>exec</code> function executes a system command and only returns (<code>false</code>) if the method doesn't exist or if directly called via the system shell.</p>
+<p>Perl might also issue a warning if you have an <code>exec</code> function that isn't followed by a <code>die</code> / <code>warn</code> / <code>exit</code> statement. However, these warnings are only issued if you have them enabled.</p>
+<pre class="language-perl"><code class="language-perl">exec("unzip -Z1 archive.zip | grep -v '/$' &gt;&gt; log.txt");
+</code></pre>
+<h3 id="using-system" class="text-title">Using system():</h3>
+<p>The system function does the same thing as <code>exec</code>. The only difference is that the <code>system</code> command creates a fork first, and the parent process waits for the child process to exit before continuing. In other words, the <code>system</code> function will terminate and return <b>only</b> after execution is complete.</p>
+<pre class="language-perl"><code class="language-perl">system("unzip -Z1 archive.zip | grep -v '/$' &gt;&gt; log.txt");
+</code></pre>
+<h3 id="capturing-output" class="text-title">Capturing output:</h3>
+<p>To capture the output, use backtick (<code>`</code>) strings to execute the command and store the response in a variable.</p>
+<p>In the following example, we'll store the response of the previous command in a variable called <code>$response</code>:</p>
+<pre class="language-perl"><code class="language-perl">$response = `unzip -Z1 archive.zip | grep -v "/$"`;
+</code></pre>
+<p>Then print it to the terminal using the <code>print</code> keyword:</p>
+<pre class="language-perl"><code class="language-perl">print $response;</code></pre></section>
+      </article>
+    </section>
+  </main>
+
+  <section id="modal-search" class="modal fade" tabindex="-1">
+  <main class="modal-dialog">
+    <section class="modal-content">
+      <nav class="modal-header">
+        <h5 class="modal-title">Search articles:</h5>
+        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+      </nav>
+      <section class="modal-body">
+        <figure class="input-group mb-4">
+          <input type="text" class="form-control search-input" placeholder="Name, category, type..." />
+        </figure>
+
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Rust</span> &sol; <span>Memory Management</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/a-brief-introduction-to-memory-management-in-rust.html">A brief introduction to memory management in Rust</a></h5>
+            <p class="lead fw-light card-text mb-1">A layman's guide to ownership, lifetimes and borrowing in Rust</p>
+            <small><span class="d-block mb-2 small"><span>05/06/2022</span> &bull; <span>11 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Networking</span> &sol; <span>Transfer Protocols</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Networking/a-non-technical-introduction-to-http-and-https.html">A non-technical introduction to HTTP and HTTPS</a></h5>
+            <p class="lead fw-light card-text mb-1">Demystifying the internet's primary communication protocol</p>
+            <small><span class="d-block mb-2 small"><span>01/06/2022</span> &bull; <span>9 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Rust</span> &sol; <span>Cargo</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/a-rustaceans-introduction-to-the-cargo-package-manager.html">A Rustaceans' introduction to the Cargo package manager</a></h5>
+            <p class="lead fw-light card-text mb-1">Creating, setting up and managing Rust projects using Cargo</p>
+            <small><span class="d-block mb-2 small"><span>03/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>CSS</span> &sol; <span>Bootstrap</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/CSS/how-to-change-the-default-font-in-bootstrap.html">How to change the default font in Bootstrap</a></h5>
+            <p class="lead fw-light card-text mb-1">Modifying default fonts without breaking your stylesheets</p>
+            <small><span class="d-block mb-2 small"><span>22/02/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Go Lang</span> &sol; <span>Regex</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Go Lang/globbing-in-go.html">Globbing in Go</a></h5>
+            <p class="lead fw-light card-text mb-1">Using regular expressions to glob directories the right way</p>
+            <small><span class="d-block mb-2 small"><span>11/03/2022</span> &bull; <span>5 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Sass</span> &sol; <span>Selectors</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Sass/how-to-extend-parent-selectors-in-sass.html">How to extend parent selectors in Sass</a></h5>
+            <p class="lead fw-light card-text mb-1">Using the Sass CSS engine to extend nested parent selectors</p>
+            <small><span class="d-block mb-2 small"><span>26/05/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>JavaScript</span> &sol; <span>Environments</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/environment-detection-in-javascript.html">Environment detection in JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">How to enable conditional code for specific environments</p>
+            <small><span class="d-block mb-2 small"><span>12/04/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Python</span> &sol; <span>PIP</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/an-introduction-to-the-pip-package-manager.html">An introduction to the PIP package manager</a></h5>
+            <p class="lead fw-light card-text mb-1">Using Python's most popular package installer</p>
+            <small><span class="d-block mb-2 small"><span>03/05/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Tutorial</b> &sol; <span>Perl</span> &sol; <span>Subprocesses</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Perl/how-to-call-a-subprocess-in-perl.html">How to call a subprocess in Perl</a></h5>
+            <p class="lead fw-light card-text mb-1">Handling subprocess calls and responses</p>
+            <small><span class="d-block mb-2 small"><span>28/04/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Project</b> &sol; <span>Python</span> &sol; <span>Git CLI</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/how-to-avoid-retyping-the-git-keyword.html">How to avoid retyping the "Git" keyword</a></h5>
+            <p class="lead fw-light card-text mb-1">Documentation for the NoGit shell CLI</p>
+            <small><span class="d-block mb-2 small"><span>03/03/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Opinion</b> &sol; <span>Rust</span> &sol; <span>Type System</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/why-type-declarations-for-rust-constants-should-be-unnecessary.html">Why type declarations for Rust constants should be unnecessary</a></h5>
+            <p class="lead fw-light card-text mb-1">Minor inconsistencies in an otherwise perfect language</p>
+            <small><span class="d-block mb-2 small"><span>09/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Misc</b> &sol; <span>JavaScript</span> &sol; <span>Empty Functions</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-check-if-a-javascript-function-is-empty.html">How to check if a JavaScript function is empty</a></h5>
+            <p class="lead fw-light card-text mb-1">A not so resourceful way of dealing with empty voids</p>
+            <small><span class="d-block mb-2 small"><span>03/05/2022</span> &bull; <span>8 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Python</span> &sol; <span>Data Types</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/a-guide-to-python-s-data-types.html">A guide to Python's data types</a></h5>
+            <p class="lead fw-light card-text mb-1">A quick and easy cheat sheet for data types in python</p>
+            <small><span class="d-block mb-2 small"><span>08/06/2022</span> &bull; <span>4 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>DOM Manipulation</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-select-sibling-elements-using-javascript.html">How to select sibling elements using JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">Targeting siblings for DOM manipulation</p>
+            <small><span class="d-block mb-2 small"><span>01/04/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>HTML</span> &sol; <span>UX</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/HTML/how-to-open-html-links-in-new-tabs.html">How to open HTML links in new tabs</a></h5>
+            <p class="lead fw-light card-text mb-1">A good way to provide links without losing unsaved content</p>
+            <small><span class="d-block mb-2 small"><span>16/03/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>Performance Testing</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/rudimentary-performance-testing-in-javascript.html">Rudimentary performance testing in JavaScript</a></h5>
+            <p class="lead fw-light card-text mb-1">A guide to estimating performance speed</p>
+            <small><span class="d-block mb-2 small"><span>02/03/2022</span> &bull; <span>3 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Python</span> &sol; <span>Development Servers</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Python/how-to-create-a-development-server-using-http-server.html">How to create a development server using HTTP Server</a></h5>
+            <p class="lead fw-light card-text mb-1">Using http.server for testing in development mode</p>
+            <small><span class="d-block mb-2 small"><span>13/05/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>JavaScript</span> &sol; <span>Regex</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/JavaScript/how-to-modify-regexp-flags.html">How to modify RegExp flags</a></h5>
+            <p class="lead fw-light card-text mb-1">Using identical regular expressions with different flags</p>
+            <small><span class="d-block mb-2 small"><span>08/06/2022</span> &bull; <span>2 minute read</span></span></small>
+          </figure>
+        
+          <figure class="mb-4 pb-4 search-cards" hidden="true">
+            <p class="small mb-2"><b>Guide</b> &sol; <span>Rust</span> &sol; <span>Installation</span></p>
+            <h5 class="mb-1"><a class="card-title" href="/articles/Rust/how-to-install-rust-on-unix.html">How to install Rust on UNIX</a></h5>
+            <p class="lead fw-light card-text mb-1">A guide to compiling your first Rust program</p>
+            <small><span class="d-block mb-2 small"><span>02/06/2022</span> &bull; <span>1 minute read</span></span></small>
+          </figure>
+        
+      </section>
+    </section>
+  </main>
+</section>
+  
+  
+
+
+<footer class="p-3 bg-dark text-center text-white-50">
+  <small class="d-block">&copy; <span id="current-year"></span> <a class="text-light" href="https://github.com/Malekaia/">@Malekaia</a></small>
+  <small class="d-block">Artwork courtesy of <a class="text-light" href="https://unsplash.com/s/users/Scott Webb" title="Scott Webb on Unsplash">Scott Webb</a></small>
+</footer>
+
+<script type="text/javascript">document.getElementById("current-year").innerHTML = (new Date()).getFullYear().toString();</script>
+  
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-129459606-1"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "UA-129459606-1");
+</script>
+  <script type="text/javascript" src="/scripts/lib.js"></script>
+  <script type="text/javascript" src="/scripts/search.js"></script>
+  <script type="text/javascript" src="/scripts/vendor/bootstrap-5.1.0.min.js"></script>
+  <script type="text/javascript" src="/scripts/vendor/prism-1.28.0.js"></script>
+</body>
+</html>
