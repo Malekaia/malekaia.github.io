@@ -24,7 +24,7 @@ $(".search-cards").forEach(function(card) {
   var current_href = location.pathname.replace(/\%20/g, " ");
   card.addEventListener("click", function(event) {
     event.preventDefault();
-    var href = $("a.h5", this)[0].getAttribute("href");
+    var href = $("a.card-title", this)[0].getAttribute("href");
     if (href === current_href) {
       input.value = "";
       $("#modal-search .btn-close")[0].click();
