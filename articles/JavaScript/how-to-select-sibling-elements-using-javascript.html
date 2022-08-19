@@ -121,11 +121,10 @@
           <div class="order-2 order-lg-1 col-6 col-lg-12 mb-0 mb-lg-3">
             <h5>Author:</h5>
             <figure class="col-12 d-flex justify-content-start align-items-center">
-              <img class="rounded" height="64px" src="/images/favicon.png" width="64px">
+              <img class="rounded" src="/images/favicon.png" width="64px" height="64px" />
               <nav class="ps-3 pt-0">
-                <h5 class="d-block fw-light mb-0">Malekai</h5>
+                <h5 class="d-block fw-light mb-1">Malekai</h5>
                 <a class="d-block" href="https://github.com/Malekaia">@Malekaia</a>
-                <small class="text-muted">BSc, FyEng, DipEng</small>
               </nav>
             </figure>
           </div>
@@ -353,10 +352,15 @@ siblings(document.querySelector("div > a"));
 
 <footer class="p-3 bg-dark text-center text-white-50">
   <small class="d-block">&copy; <span id="current-year"></span> <a class="text-light" href="https://github.com/Malekaia/">@Malekaia</a></small>
-  <small class="d-block">Artwork courtesy of <a class="text-light" href="https://unsplash.com/s/users/Veeterzy" title="Veeterzy on Unsplash">Veeterzy</a></small>
+  <small class="d-block">
+    <span>Artwork courtesy of</span>
+    
+      <a class="text-light" href="https://unsplash.com/s/users/Veeterzy" title="Veeterzy on Unsplash">Veeterzy</a>
+    
+  </small>
 </footer>
 
-<script type="text/javascript">document.getElementById("current-year").innerHTML = (new Date()).getFullYear().toString();</script>
+<script type="text/javascript" src="/scripts/footer.js"></script>
   
 <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-129459606-1"></script>
 <script type="text/javascript">
