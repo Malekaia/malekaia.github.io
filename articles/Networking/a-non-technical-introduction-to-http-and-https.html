@@ -46,16 +46,16 @@
 <link rel="publisher" href="https://twitter.com/Melekaia" />
 <meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
   <meta name="keywords" content="keywords" /><meta name="category" content="Networking" />
-       <meta name="topic" content="Transfer Protocols" /><meta name="revised" content="01/06/2022" />
-       <meta name="date" content="01/06/2022" /><meta name="pagename" content="A non&#45&#59;technical introduction to HTTP and HTTPS" />
-       <meta name="title" content="A non&#45&#59;technical introduction to HTTP and HTTPS" /><meta name="description" content="Demystifying the internet&#39&#59;s primary communication protocol" />
-       <meta name="abstract" content="Demystifying the internet&#39&#59;s primary communication protocol" /><meta name="summary" content="Demystifying the internet&#39&#59;s primary communication protocol" />
-       <meta name="subtitle" content="Demystifying the internet&#39&#59;s primary communication protocol" /><meta name="syndication-source" content="" />
-       <meta name="original-source" content="" /><meta name="og:type" content="Tutorial" />
-       <meta name="og:title" content="A non&#45&#59;technical introduction to HTTP and HTTPS" /><meta name="og:description" content="Demystifying the internet&#39&#59;s primary communication protocol" />
-       <meta name="og:url" content="" /><meta name="og:image" content="/images/thomas&#45&#59;jensen&#58&#59;ISG&#45&#59;rUel0Uw&#45&#59;unsplash&#46&#59;jpg" />
-       <link rel="bookmark" title="A non&#45&#59;technical introduction to HTTP and HTTPS" href="" /><link rel="canonical" href="" />
-       <link rel="self" type="application/atom+xml" href="" />
+     <meta name="topic" content="Transfer Protocols" /><meta name="revised" content="01/06/2022" />
+     <meta name="date" content="01/06/2022" /><meta name="pagename" content="A non&#45&#59;technical introduction to HTTP and HTTPS" />
+     <meta name="title" content="A non&#45&#59;technical introduction to HTTP and HTTPS" /><meta name="description" content="Demystifying the internet&#39&#59;s primary communication protocol" />
+     <meta name="abstract" content="Demystifying the internet&#39&#59;s primary communication protocol" /><meta name="summary" content="Demystifying the internet&#39&#59;s primary communication protocol" />
+     <meta name="subtitle" content="Demystifying the internet&#39&#59;s primary communication protocol" /><meta name="syndication-source" content="" />
+     <meta name="original-source" content="" /><meta name="og:type" content="Tutorial" />
+     <meta name="og:title" content="A non&#45&#59;technical introduction to HTTP and HTTPS" /><meta name="og:description" content="Demystifying the internet&#39&#59;s primary communication protocol" />
+     <meta name="og:url" content="" /><meta name="og:image" content="/images/thomas&#45&#59;jensen&#58&#59;ISG&#45&#59;rUel0Uw&#45&#59;unsplash&#46&#59;jpg" />
+     <link rel="bookmark" title="A non&#45&#59;technical introduction to HTTP and HTTPS" href="" /><link rel="canonical" href="" />
+     <link rel="self" type="application/atom+xml" href="" />
 </head>
 <body>
   
@@ -110,15 +110,10 @@
   <main class="container-fluid container-md py-5">
     <section class="row col-lg-11 my-0 mx-auto">
       
-      <aside class="col-12 col-lg-3 mb-5 mb-lg-0 ps-lg-0 pb-lg-0">
+      <aside class="col-12 col-lg-3 mb-4 mb-lg-0 ps-lg-0 pb-lg-0">
         <div class="row">
           
-          <div class="order-1 order-lg-2 col-6 col-lg-12">
-            <h5 class="mb-2">Table of contents:</h5>
-            <section class="table-of-contents"><a href="#what-is-http" data-level="3">What is HTTP</a><a href="#what-is-https" data-level="3">What is HTTPS</a><a href="#what-are-http-headers" data-level="3">What are HTTP headers</a><a href="#what-is-crud" data-level="3">What is CRUD</a><a href="#request-methods" data-level="3">Request methods</a><a href="#http-s-get" data-level="5">HTTP(S) GET</a><a href="#http-s-post" data-level="5">HTTP(S) POST</a><a href="#http-s-put" data-level="5">HTTP(S) PUT</a><a href="#http-s-delete" data-level="5">HTTP(S) DELETE</a><a href="#http-s-patch" data-level="5">HTTP(S) PATCH</a><a href="#http-s-head" data-level="5">HTTP(S) HEAD</a><a href="#http-s-options" data-level="5">HTTP(S) OPTIONS</a><a href="#http-s-connect" data-level="5">HTTP(S) CONNECT</a><a href="#http-s-trace" data-level="5">HTTP(S) TRACE</a><a href="#safe-and-unsafe-methods" data-level="3">Safe and unsafe methods</a><a href="#closing-thoughts" data-level="3">Closing thoughts</a></section>
-          </div>
-          
-          <div class="order-2 order-lg-1 col-6 col-lg-12 mb-0 mb-lg-3">
+          <div class="col-12 mb-3">
             <h5>Author:</h5>
             <figure class="col-12 d-flex justify-content-start align-items-center">
               <img class="rounded" src="/images/favicon.png" width="64px" height="64px" />
@@ -127,6 +122,11 @@
                 <a class="d-block" href="https://github.com/Malekaia">@Malekaia</a>
               </nav>
             </figure>
+          </div>
+          
+          <div class="col-12">
+            <h5 class="mb-2">Table of contents:</h5>
+            <section class="table-of-contents"><a href="#what-is-http" data-level="3">What is HTTP</a><a href="#what-is-https" data-level="3">What is HTTPS</a><a href="#what-are-http-headers" data-level="3">What are HTTP headers</a><a href="#what-is-crud" data-level="3">What is CRUD</a><a href="#request-methods" data-level="3">Request methods</a><a href="#http-s-get" data-level="5">HTTP(S) GET</a><a href="#http-s-post" data-level="5">HTTP(S) POST</a><a href="#http-s-put" data-level="5">HTTP(S) PUT</a><a href="#http-s-delete" data-level="5">HTTP(S) DELETE</a><a href="#http-s-patch" data-level="5">HTTP(S) PATCH</a><a href="#http-s-head" data-level="5">HTTP(S) HEAD</a><a href="#http-s-options" data-level="5">HTTP(S) OPTIONS</a><a href="#http-s-connect" data-level="5">HTTP(S) CONNECT</a><a href="#http-s-trace" data-level="5">HTTP(S) TRACE</a><a href="#safe-and-unsafe-methods" data-level="3">Safe and unsafe methods</a><a href="#closing-thoughts" data-level="3">Closing thoughts</a></section>
           </div>
         </div>
       </aside>

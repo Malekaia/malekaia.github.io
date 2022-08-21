@@ -46,16 +46,16 @@
 <link rel="publisher" href="https://twitter.com/Melekaia" />
 <meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
   <meta name="keywords" content="memory&#44&#59;management&#44&#59;ownership&#44&#59;scopes&#44&#59;lifetimes&#44&#59;stack&#44&#59;heap&#44&#59;requesting&#44&#59;allocating&#44&#59;freeing&#44&#59;copying&#44&#59;moving&#44&#59;cloning&#44&#59;values&#44&#59;borrowing&#44&#59;immutable&#44&#59;references&#44&#59;mutable&#44&#59;reference&#44&#59;variable&#44&#59;value&#44&#59;names&#44&#59;scope" /><meta name="category" content="Rust" />
-       <meta name="topic" content="Memory Management" /><meta name="revised" content="05/06/2022" />
-       <meta name="date" content="05/06/2022" /><meta name="pagename" content="A brief introduction to memory management in Rust" />
-       <meta name="title" content="A brief introduction to memory management in Rust" /><meta name="description" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
-       <meta name="abstract" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" /><meta name="summary" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
-       <meta name="subtitle" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" /><meta name="syndication-source" content="" />
-       <meta name="original-source" content="" /><meta name="og:type" content="Tutorial" />
-       <meta name="og:title" content="A brief introduction to memory management in Rust" /><meta name="og:description" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
-       <meta name="og:url" content="" /><meta name="og:image" content="/images/vishnu&#45&#59;mohanan&#58&#59;pfR18JNEMv8&#45&#59;unsplash&#46&#59;jpg" />
-       <link rel="bookmark" title="A brief introduction to memory management in Rust" href="" /><link rel="canonical" href="" />
-       <link rel="self" type="application/atom+xml" href="" />
+     <meta name="topic" content="Memory Management" /><meta name="revised" content="05/06/2022" />
+     <meta name="date" content="05/06/2022" /><meta name="pagename" content="A brief introduction to memory management in Rust" />
+     <meta name="title" content="A brief introduction to memory management in Rust" /><meta name="description" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
+     <meta name="abstract" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" /><meta name="summary" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
+     <meta name="subtitle" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" /><meta name="syndication-source" content="" />
+     <meta name="original-source" content="" /><meta name="og:type" content="Tutorial" />
+     <meta name="og:title" content="A brief introduction to memory management in Rust" /><meta name="og:description" content="A layman&#39&#59;s guide to ownership&#44&#59; lifetimes and borrowing in Rust" />
+     <meta name="og:url" content="" /><meta name="og:image" content="/images/vishnu&#45&#59;mohanan&#58&#59;pfR18JNEMv8&#45&#59;unsplash&#46&#59;jpg" />
+     <link rel="bookmark" title="A brief introduction to memory management in Rust" href="" /><link rel="canonical" href="" />
+     <link rel="self" type="application/atom+xml" href="" />
 </head>
 <body>
   
@@ -110,15 +110,10 @@
   <main class="container-fluid container-md py-5">
     <section class="row col-lg-11 my-0 mx-auto">
       
-      <aside class="col-12 col-lg-3 mb-5 mb-lg-0 ps-lg-0 pb-lg-0">
+      <aside class="col-12 col-lg-3 mb-4 mb-lg-0 ps-lg-0 pb-lg-0">
         <div class="row">
           
-          <div class="order-1 order-lg-2 col-6 col-lg-12">
-            <h5 class="mb-2">Table of contents:</h5>
-            <section class="table-of-contents"><a href="#memory-management" data-level="3">Memory management</a><a href="#ownership-scopes-and-lifetimes" data-level="3">Ownership, scopes and lifetimes</a><a href="#the-stack-and-heap" data-level="3">The stack and heap</a><a href="#requesting-allocating-and-freeing-memory" data-level="3">Requesting, allocating and freeing memory</a><a href="#copying-moving-and-cloning-values" data-level="3">Copying, moving and cloning values</a><a href="#a-brief-overview-of-borrowing" data-level="3">A brief overview of borrowing</a><a href="#immutable-references" data-level="5">Immutable references</a><a href="#mutable-references" data-level="5">Mutable references</a><a href="#closing-thoughts" data-level="3">Closing thoughts</a></section>
-          </div>
-          
-          <div class="order-2 order-lg-1 col-6 col-lg-12 mb-0 mb-lg-3">
+          <div class="col-12 mb-3">
             <h5>Author:</h5>
             <figure class="col-12 d-flex justify-content-start align-items-center">
               <img class="rounded" src="/images/favicon.png" width="64px" height="64px" />
@@ -127,6 +122,11 @@
                 <a class="d-block" href="https://github.com/Malekaia">@Malekaia</a>
               </nav>
             </figure>
+          </div>
+          
+          <div class="col-12">
+            <h5 class="mb-2">Table of contents:</h5>
+            <section class="table-of-contents"><a href="#memory-management" data-level="3">Memory management</a><a href="#ownership-scopes-and-lifetimes" data-level="3">Ownership, scopes and lifetimes</a><a href="#the-stack-and-heap" data-level="3">The stack and heap</a><a href="#requesting-allocating-and-freeing-memory" data-level="3">Requesting, allocating and freeing memory</a><a href="#copying-moving-and-cloning-values" data-level="3">Copying, moving and cloning values</a><a href="#a-brief-overview-of-borrowing" data-level="3">A brief overview of borrowing</a><a href="#immutable-references" data-level="5">Immutable references</a><a href="#mutable-references" data-level="5">Mutable references</a><a href="#closing-thoughts" data-level="3">Closing thoughts</a></section>
           </div>
         </div>
       </aside>
