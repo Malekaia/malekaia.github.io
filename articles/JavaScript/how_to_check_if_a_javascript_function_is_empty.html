@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to check if a JavaScript function is empty | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="javascript,function,void,empty,string,manipulation,callback,check,conditional,statements,scope,block" />
+<meta name="pagename" content="How to check if a JavaScript function is empty | Malekaia" />
+<meta name="description" content="A not so resourceful way of dealing with empty voids" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="How to check if a JavaScript function is empty | Malekaia" />
+<meta name="og:description" content="A not so resourceful way of dealing with empty voids" />
+<meta name="og:url" content="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="How to check if a JavaScript function is empty | Malekaia" href="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="javascript,function,void,empty,string,manipulation,callback,check,conditional,statements,scope,block" />
+<meta name="category" content="JavaScript" />
+<meta name="topic" content="Empty Functions" />
+<meta name="date" content="03&#x2F;05&#x2F;2022" />
+<meta name="pagename" content="How to check if a JavaScript function is empty" />
+<meta name="title" content="How to check if a JavaScript function is empty" />
+<meta name="description" content="A not so resourceful way of dealing with empty voids" />
+<meta name="abstract" content="A not so resourceful way of dealing with empty voids" />
+<meta name="summary" content="A not so resourceful way of dealing with empty voids" />
+<meta name="subtitle" content="A not so resourceful way of dealing with empty voids" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;how_to_check_if_a_javascript_function_is_empty.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;how_to_check_if_a_javascript_function_is_empty.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/about/">About</a>
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main" href="/portfolio/">Portfolio</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=misc" class="link-brand">Misc</a> &sol; <a href="/articles/#category=javascript" class="link-brand">JavaScript</a> &sol; Empty Functions</p>
+<h2 class="mb-2">How to check if a JavaScript function is empty</h2>
+<p class="lead mb-3">A not so resourceful way of dealing with empty voids</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 03/05/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/javascript.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Introduction:</h3>
+<p>I recently came across <a href="https://stackoverflow.com/q/7960335/10415695">a question</a> on StackOverflow. It's a few years old, but struck me as bizarre enough that I decided to write about it. The gist of the question in question (<i>pun intended</i>) is empty functions in JavaScript, specifically: if it's possible to detect them.</p>
+<p>The reason why I find it bizarre is because the assumptions of the <i>reason(s) why</i> you'd want to do this are negated by the implementation of the <i>"solution"</i>, and despite <i>"working"</i> - again, I say that with emphasis - there are better ways of handling those scenarios.</p>
+<p>For example, say you wanted to <i>check if a function is empty to avoid running it</i>. The question is why? If it's to improve performance, you'd be better off letting it <a href="https://en.wikipedia.org/wiki/Fail-safe#Electrical_or_electronic">fail safe</a> after checking if the function returned nothing using an <code>if</code> condition. In fact you'd be using more resources to check if the function is empty than you would letting an empty function do nothing.</p>
+<p>Simply put, why waste resources on checking if something that might do nothing does nothing? The correct way to handle this situation is to determine what to do if it does something and how to let it fail safe if it does nothing.</p>
+<p>Well, what if you wanted to <i>avoid passing a void function to another function</i> or <i>needed a function to return something</i>? Once again, these scenarios are better handled by a combination of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">if conditions</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a>/<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">instanceof</a> checks and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality">equality operators</a>.</p>
+<p>But, I'm not here to talk you out of this so lets get started.</p>
+<h3 class="text-title">String manipulation:</h3>
+<p>In JavaScript you can turn pretty much anything into a string: <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean/toString" title="Boolean.prototype.toString">Booleans</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString" title="Number.prototype.toString">Numbers</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString" title="Array.prototype.toString">Arrays</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" title="Object.prototype.toString">Objects</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/toString" title="Error.prototype.toString">Errors</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString" title="Date.prototype.toString">Dates</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/URL/toString" title="URL.toString">URLs</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/toString" title="URLSearchParams.toString">URL Search Parameters</a>, <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" title="JSON.stringify">JSON</a>, a <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/parseFromString" title="DOMParser.parseFromString">DOM</a> and <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer" title="XMLSerializer">XML</a>. Heck, you could even get the string version of a string from <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString" title="String.prototype.toString">String.prototype.toString</a>.</p>
+<p>Most built-in types, objects and classes implement the <code>toString()</code> method, including the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a> object: <a class="help" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString">Function.prototype.toString</a>.</p>
+<p>This is great because it allows us to use string manipulation to determine if there are any statements, expressions or declarations in a function and because all javascript function bodies follow the same syntax - an opening curly brace that has a matching closing curly brace - we can easily isolate the function's body using the <code>indexOf()</code> and <code>lastIndexOf()</code> methods:</p>
+<ol>
+<li>Use the <code>toString()</code> method to return the function as a string</li>
+<li>Remove new lines and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim">trim off leading and trailing whitespace</a>
+</li>
+<li>Find the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">index of the first instance</a> of an opening curly brace
+</li>
+<li>Find the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">index of the last instance</a> of a closing curly brace
+</li>
+<li>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring">Remove the characters</a> before/after those curly braces (inclusive)
+</li>
+<li>Trim the resulting string</li>
+<li>If it's length is greater than <code>0</code> return <code>false</code>, otherwise return <code>true</code></li>
+</ol>
+<p>To demonstrate, we'll need a few sample functions with varying indentation:</p>
+<pre class="language-javascript"><code class="language-javascript">const f1 = function()
+ { }
+;
+const f2 = function wow()
+{
+
+};
+const f3 = function amazing (a) {
+  };
+function f4(a, b) {
+  const i = 1;
+  return i + 1;
+};</code></pre>
+<p>And the function, implemented as such:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // convert the function into a string
+  // remove the new lines
+  // trim leading and trailing whitespace
+  const string_fn = fn.toString().replace(/\n+/g, "").trim();
+
+  // get the first index of an opening curly brace
+  const first_index = string_fn.indexOf("{");
+
+  // remove that curly brace and everything before it from the body of the function
+  let body = string_fn.substring(first_index + 1);
+
+  // get the last index of a closing curly brace
+  const last_index = body.lastIndexOf("}");
+
+  // remove that curly brace and everything after it from the body of the function
+  body = body.substring(0, last_index);
+
+  // remove leading and trailing whitespace from the function body
+  body = body.trim();
+
+  // return true if the string is empty, false if not
+  return !!(body.length &lt; 1);
+}</code></pre>
+<p>Which, when called:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log(is_fn_empty(f1));
+console.log(is_fn_empty(f2));
+console.log(is_fn_empty(f3));
+console.log(is_fn_empty(f4));
+</code></pre>
+<p>Produces the following output:</p>
+<pre class="language-shell"><code class="language-shell">true
+true
+true
+false</code></pre>
+<p>We could simplify the <code>is_fn_empty</code> function and have it work exactly the same.</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // convert the function into a string
+  // remove new lines from the string
+  // trim leading and trailing whitespace from the string
+  const string_fn = fn.toString().replace(/\n+/g, "").trim();
+
+  // get the first and last index of an opening and a closing brace
+  const [first_index, last_index] = [string_fn.indexOf("{"), string_fn.lastIndexOf("}")];
+
+  // remove the data before/after those braces (inclusive)
+  const body = string_fn.substring(0, last_index).substring(first_index + 1).trim();
+
+  // return true if empty, false if not
+  return !!(body.length &lt; 1);
+}</code></pre>
+<h3 class="text-title">Regular expressions:</h3>
+<p>If you're comfortable with using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a>, you could use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers">quantifiers</a> to do the same thing using regex.</p>
+<p>For a greedy non-specific search, use <code>/\{(.*)\}/s</code> to isolate everything in between the first opening and last closing curly brace:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // the regular expression to check against
+  const re_check = /\{(.*)\}/s;
+
+  // convert the function into a string
+  // trim leading and trailing whitespace from the string
+  // remove all new lines from the string
+  const string_fn = fn.toString().trim().replace(/\n+/g, "");
+
+  // try to match the regular expression against the function string
+  const match = string_fn.match(re_check);
+
+  // if a match exists
+  if (match !== null) {
+    // get the trimmed function body
+    const body = match[1].trim();
+
+    // return true if empty and false if not
+    return !!(body.length &lt; 1);
+  }
+
+  // otherwise fail safe and return null
+  return null;
+}</code></pre>
+<p>Otherwise, for a more specific and thorough search, use <code>/^function(.*?\()(.*?\)|\)).*?\{(.*?)\}($|\;$)/</code> to isolate the function body:</p>
+<pre class="language-javascript"><code class="language-javascript">function is_fn_empty(fn) {
+  // the regular expression to check against
+  const re_check = /^function(.*?\()(.*?\)|\)).*?\{(.*?)\}($|\;$)/;
+
+  // convert the function into a string
+  // trim leading and trailing whitespace from the string
+  // remove all new lines from the string
+  const string_fn = fn.toString().trim().replace(/\n+/g, "");
+
+  // try to match the regular expression against the function string
+  const match = string_fn.match(re_check);
+
+  // if a match exists
+  if (match !== null) {
+    // get the trimmed function body
+    const body = match[3].trim();
+
+    // return true if empty and false if not
+    return !!(body.length &lt; 1);
+  }
+
+  // otherwise fail safe and return null
+  return null;
+}</code></pre>
+<p>To demonstrate and test this method effectively, we'll need a test function with multiple nested <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#block_statement">block statements</a> to make sure our regular expressions aren't caught out by multiple curly braces in the function body:</p>
+<pre class="language-javascript"><code class="language-javascript">function f4(a, b) {
+  {
+    console.log("Hello");
+    {
+      console.log("World");
+    }
+  }
+  const i = 1;
+  return i + 1;
+};</code></pre>
+<p>Both functions should output the following:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log(is_fn_empty(f1)); // true
+console.log(is_fn_empty(f2)); // true
+console.log(is_fn_empty(f3)); // true
+console.log(is_fn_empty(f4)); // false
+</code></pre>
+<h3 class="text-title">Closing thoughts:</h3>
+<p>Although I said I wouldn't talk you out of this, please remember that this article was only written because I wanted to try and solve a bizarre problem. I wouldn't recommend you use any of these functions in production and I reiterate that there are better ways of dealing with void functions.</p>
+<p>Thank you for reading.</p>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/Python/how_to_create_a_development_server_using_http_server.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/Python/an_introduction_to_the_pip_package_manager.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>

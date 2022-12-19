@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to change the default font in Bootstrap | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="how,to,change,the,default,font,in,bootstrap,html,css,fonts,font-family,noto,google" />
+<meta name="pagename" content="How to change the default font in Bootstrap | Malekaia" />
+<meta name="description" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="How to change the default font in Bootstrap | Malekaia" />
+<meta name="og:description" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="og:url" content="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="How to change the default font in Bootstrap | Malekaia" href="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/CSS/how_to_change_the_default_font_in_bootstrap.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="how,to,change,the,default,font,in,bootstrap,html,css,fonts,font-family,noto,google" />
+<meta name="category" content="CSS" />
+<meta name="topic" content="Bootstrap" />
+<meta name="date" content="22&#x2F;02&#x2F;2022" />
+<meta name="pagename" content="How to change the default font in Bootstrap" />
+<meta name="title" content="How to change the default font in Bootstrap" />
+<meta name="description" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="abstract" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="summary" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="subtitle" content="Modifying default fonts without breaking your stylesheets" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;CSS&#x2F;how_to_change_the_default_font_in_bootstrap.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;CSS&#x2F;how_to_change_the_default_font_in_bootstrap.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/about/">About</a>
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main" href="/portfolio/">Portfolio</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=tutorial" class="link-brand">Tutorial</a> &sol; <a href="/articles/#category=css" class="link-brand">CSS</a> &sol; Bootstrap</p>
+<h2 class="mb-2">How to change the default font in Bootstrap</h2>
+<p class="lead mb-3">Modifying default fonts without breaking your stylesheets</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 22/02/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/css.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Introduction:</h3>
+<p><a href="https://getbootstrap.com/">Bootstrap</a> takes care of most (if not all) of a project's CSS, from components to utilities and fonts. While this can be great for many projects, it can also be difficult for front-end developers looking to add a specific style or typeface to their site to change these styles without resorting to hacky drop-ins or separate font classes for elements.</p>
+<p>This tutorial demonstrates several ways to change the font of your website without modifying the Bootstrap library or breaking your stylesheets.</p>
+<h3 class="text-title">Creating a custom build:</h3>
+<p>This method takes advantage of the Themestr app, which allows you to customise Bootstrap. Themestr can change the SCSS variables that Bootstrap uses, including those for the <code>font-family</code> property. It then produces a new Bootstrap build (CSS file) which you can download and drop into your project without making any changes to other source files.</p>
+<p>While this method is by far the easiest - taking a minute or two - you will have to host your Bootstrap build, meaning you'll miss out on the benefits of <a href="https://www.cloudflare.com/en-gb/learning/cdn/what-is-a-cdn/">CDNs</a>.</p>
+<ul>
+<li>Visit the <a href="https://themestr.app/customize">Themestr app</a>
+</li>
+<li>Scroll to the "fonts" section</li>
+<li>Modify the values for the <code>$font-family-sans-serif</code>, <code>$font-family-monospace</code>, <code>$font-family-base</code> and <code>$font-size-base</code> variables</li>
+<li>Download and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#try_it">include</a> the CSS stylesheet in your HTML
+</li>
+</ul>
+<h3 class="text-title">Changing fonts using CSS rules from Bootstrap:</h3>
+<p>Although this method does require a manual search of the Bootstrap source file and could be prone to human error - I.E. Missing a font-family declaration could result in inconsistencies in your stylesheet - in some cases, it is a better choice than creating a new Bootstrap build.</p>
+<ul>
+<li>Open your Bootstrap copy in your editor</li>
+<li>Press <code>ctrl+f</code> and enter <code>font-family</code></li>
+<li>Copy all the selectors with <code>font</code> or <code>font-family</code> declarations</li>
+<li>Paste those selectors and rules in another stylesheet</li>
+<li>Remove the rules that don't have anything to do with font styles</li>
+</ul>
+<p>After going through these steps, you should end up with a set of <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS">rules</a> similar to these:</p>
+<pre class="language-css"><code class="language-css">html {
+  font-family: sans-serif
+}
+body {
+  font-family: sans-serif
+}
+code, kbd, pre, samp {
+  font-family: monospace
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit
+}
+.tooltip {
+  font-family: sans-serif
+}
+.popover {
+  font-family: sans-serif
+}
+.text-monospace {
+  font-family: monospace
+}
+</code></pre>
+<p>Which we could then simplify:</p>
+<pre class="language-css"><code class="language-css">html, body, .tooltip, .popover {
+  font-family: sans-serif
+}
+code, kbd, pre, samp, .text-monospace {
+  font-family: monospace
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit
+}
+</code></pre>
+<p>Before changing the values of the <code>font-family</code> property:</p>
+<pre class="language-css"><code class="language-css">html, body, .tooltip, .popover {
+  font-family: "Noto Sans", sans-serif
+}
+code, kbd, pre, samp, .text-monospace {
+  font-family: "Noto Mono", monospace
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit
+}
+</code></pre>
+<p>You can also add rules to modify the fonts of other elements, allowing you to keep all <code>font-family</code> properties in one location:</p>
+<pre class="language-css"><code class="language-css">h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3,
+.display-4, .display-5, .display-6 {
+  font-family: "Noto Serif", sans-serif;
+  font-weight: bold
+}
+html, body, .tooltip, .popover {
+  font-family: "Noto Sans", sans-serif
+}
+code, kbd, pre, samp, .text-monospace {
+  font-family: "Noto Mono", monospace
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit
+}
+</code></pre>
+<h3 class="text-title">Honorable mention: Bootswatch themes</h3>
+<p>While not necessarily a fix, some people might prefer to visit and look at the available <a href="https://bootswatch.com/">Bootstrap themes</a> before attempting to implement their theme changes.</p>
+<ol>
+<li>Visit <a href="https://bootswatch.com/">Bootswatch.com</a>
+</li>
+<li>Choose the theme you want</li>
+<li>Download the CSS file for the theme and drop it into your project</li>
+</ol>
+<h3 class="text-title">Not so honorable mention: Global font override</h3>
+<p>This quick and dirty solution is only suitable for small websites using a single font family because this solution overwrites the <code>font-family</code> property at the global level.</p>
+<p>Remember that if you maintain a large project or a multifaceted site, your project's <a href="https://maze.co/collections/ux-ui-design/what-is-ux/">UX</a> will suffer.</p>
+<pre class="language-css"><code class="language-css">&ast; {
+  font-family: "Noto Sans", sans-serif !important
+}</code></pre>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/JavaScript/rudimentary_performance_testing_in_javascript.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>

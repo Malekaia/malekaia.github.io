@@ -1,0 +1,1 @@
+Dove(function(){var word_count=Dove("article#article-template").text().split(/\s+/g).length;var words_per_minute=160;var minutes=word_count>0?Math.ceil(word_count/words_per_minute):"5";Dove(".estimated-read-time").html(minutes+" minute read")})

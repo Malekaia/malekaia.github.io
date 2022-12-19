@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rudimentary performance testing in JavaScript | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="javascript,unix,node,benchmarking,benchmarks,console,time,performance,testing,developer,tools,profiling,firefox,recording,captures" />
+<meta name="pagename" content="Rudimentary performance testing in JavaScript | Malekaia" />
+<meta name="description" content="A guide to estimating performance speed" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="Rudimentary performance testing in JavaScript | Malekaia" />
+<meta name="og:description" content="A guide to estimating performance speed" />
+<meta name="og:url" content="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="Rudimentary performance testing in JavaScript | Malekaia" href="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/JavaScript/rudimentary_performance_testing_in_javascript.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="javascript,unix,node,benchmarking,benchmarks,console,time,performance,testing,developer,tools,profiling,firefox,recording,captures" />
+<meta name="category" content="JavaScript" />
+<meta name="topic" content="Performance Testing" />
+<meta name="date" content="02&#x2F;03&#x2F;2022" />
+<meta name="pagename" content="Rudimentary performance testing in JavaScript" />
+<meta name="title" content="Rudimentary performance testing in JavaScript" />
+<meta name="description" content="A guide to estimating performance speed" />
+<meta name="abstract" content="A guide to estimating performance speed" />
+<meta name="summary" content="A guide to estimating performance speed" />
+<meta name="subtitle" content="A guide to estimating performance speed" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;rudimentary_performance_testing_in_javascript.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;rudimentary_performance_testing_in_javascript.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/about/">About</a>
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main" href="/portfolio/">Portfolio</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=guide" class="link-brand">Guide</a> &sol; <a href="/articles/#category=javascript" class="link-brand">JavaScript</a> &sol; Performance Testing</p>
+<h2 class="mb-2">Rudimentary performance testing in JavaScript</h2>
+<p class="lead mb-3">A guide to estimating performance speed</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 02/03/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/javascript.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Using console.time:</h3>
+<p>The <code>console.time()</code> method starts a timer you can use to track how long an operation takes. You give each timer a unique name, and may have up to 10,000 timers running on a given page. When you call <code>console.timeEnd()</code> with the same name, the browser will output the time, in milliseconds, that elapsed since the timer was started.</p>
+<p>To implement this, simply call <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/time">console.time</a> at the top of your script:</p>
+<pre class="language-javascript"><code class="language-javascript">console.time("program");
+</code></pre>
+<p>Then call <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/timeEnd">console.time</a> at the bottom of the script:</p>
+<pre class="language-javascript"><code class="language-javascript">console.timeEnd("program");
+</code></pre>
+<p>The output is a <code>console.log</code> resembling:</p>
+<pre class="language-javascript"><code class="language-javascript">program: 1123ms
+</code></pre>
+<h3 class="text-title">UNIX time command:</h3>
+<p>If you're not working in a browser environment (I.E. <a href="https://nodejs.org/en/">Node.js</a>) and you're on a UNIX system, you can install and use the <a href="https://en.wikipedia.org/wiki/Time_(Unix)">time command</a>, which can be used as a prefix to any other command and informs you of performance of a program in real time, user time, and sys time.</p>
+<pre class="language-shell"><code class="language-shell">time node path/to/javascript/file.js
+</code></pre>
+<p>Which should output:</p>
+<pre class="language-shell"><code class="language-shell"># program output...
+
+real    0m0.123s
+user    0m0.123s
+sys     0m0.123s</code></pre>
+<h3 class="text-title">Firefox developer tools:</h3>
+<p><a href="https://firefox-dev.tools/">Firefox Developer Tools</a>, there's a performance tab that can be used to measure the performance of specific parts of a web page load time, from page load to specific resource load times, to program execution speeds.</p>
+<p>To open it:</p>
+<ul>
+<li>Press <code>ctrl + shift + k</code> on your keyboard</li>
+<li>Select the <code>performance</code> tab</li>
+<li>Press the "Start recording" button</li>
+<li>Press the "Capture profile" button</li>
+</ul>
+<p>This should then open a new tab at <a href="https://profiler.firefox.com/">profiler.firefox.com</a> showing you all of the performance information of that site. From frame-by-frame captures of the page load in progress, to the exact amount of milliseconds the page took to load, to the exact CPU resources needed to load the page.</p>
+<p>The <a href="https://profiler.firefox.com/">profiler.firefox.com</a> page includes all of the performance graphs, charts, information, properties and data you'll ever need.</p>
+<p>And if you like the Firefox performance profiler, try the <a href="https://www.mozilla.org/en-GB/firefox/developer/">Firefox Browser Developer Edition</a> for even more dev-tools.</p>
+<h3 class="text-title">Honorable mention: Using online benchmarks:</h3>
+<p><strong>Notice:</strong> I've rewritten this section because <a href="https://jsperf.com">JSPerf</a> went down.</p>
+<p><a href="http://jsben.ch">JSBen</a> is a great tool for testing the performance of small(er) snippets, simply visit the site input the first sample, and the second and JSBen will tell you which benchmark was more performant.</p>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/Go/globbing_in_go.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/CSS/how_to_change_the_default_font_in_bootstrap.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>
