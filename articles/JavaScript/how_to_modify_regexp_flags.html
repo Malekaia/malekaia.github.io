@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to modify RegExp flags | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="javascript,regular,expressions,regex,flags,modifying,changing,strings,string,manipulation" />
+<meta name="pagename" content="How to modify RegExp flags | Malekaia" />
+<meta name="description" content="Using identical regular expressions with different flags" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="How to modify RegExp flags | Malekaia" />
+<meta name="og:description" content="Using identical regular expressions with different flags" />
+<meta name="og:url" content="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="How to modify RegExp flags | Malekaia" href="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/JavaScript/how_to_modify_regexp_flags.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="javascript,regular,expressions,regex,flags,modifying,changing,strings,string,manipulation" />
+<meta name="category" content="JavaScript" />
+<meta name="topic" content="Regex" />
+<meta name="date" content="08&#x2F;06&#x2F;2022" />
+<meta name="pagename" content="How to modify RegExp flags" />
+<meta name="title" content="How to modify RegExp flags" />
+<meta name="description" content="Using identical regular expressions with different flags" />
+<meta name="abstract" content="Using identical regular expressions with different flags" />
+<meta name="summary" content="Using identical regular expressions with different flags" />
+<meta name="subtitle" content="Using identical regular expressions with different flags" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;how_to_modify_regexp_flags.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;how_to_modify_regexp_flags.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main me-2" href="/portfolio/">Portfolio</a>
+<a class="link-dark link-main" href="/about/">About</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=guide" class="link-brand">Guide</a> &sol; <a href="/articles/#category=javascript" class="link-brand">JavaScript</a> &sol; Regex</p>
+<h2 class="mb-2">How to modify RegExp flags</h2>
+<p class="lead mb-3">Using identical regular expressions with different flags</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 08/06/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/javascript.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Modifying regex flags:</h3>
+<p>Given the need for two identical regular expressions with different <a href="https://javascript.info/regexp-introduction#flags">flags</a>, instead of creating two variables:</p>
+<pre class="language-javascript"><code class="language-javascript">const a = /hello\sworld\!/gi;
+const b = /hello\sworld\!/g;</code></pre>
+<p>You could use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#Description">RegExp</a> constructor to create a copy of the first regular expression and add new flags to it:</p>
+<pre class="language-javascript"><code class="language-javascript">const x = /ab(c)/gi;
+const y = new RegExp(x, "g");
+console.log(y);</code></pre>
+<p>Which would produce the following output:</p>
+<pre class="language-javascript"><code class="language-javascript">/ab(c)/g</code></pre>
+<h3 class="text-title">Detecting regex flags:</h3>
+<p>To get a string containing the flags in use on a particular regular expression, you'd use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags">RegExp.prototype.flags</a> property:</p>
+<pre class="language-javascript"><code class="language-javascript">const regex = /hello\sworld\!/gi
+console.log(regex.flags);
+
+// output: gi</code></pre>
+<p>Which you could then split into an array:</p>
+<pre class="language-javascript"><code class="language-javascript">const regex = /hello\sworld\!/gi
+console.log(regex.flags.split(""));
+
+// output: ["g", "i"]</code></pre>
+<p>And search:</p>
+<pre class="language-javascript"><code class="language-javascript">const regex = /hello\sworld\!/gi
+const flags = regex.flags.split("");
+console.log(flags.includes("g"));
+
+// output: true</code></pre>
+<h3 class="text-title">Polyfill:</h3>
+<p>You may need to polyfill <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags#Polyfill">RegExp.prototype.flags</a> as it's <a href="https://caniuse.com/mdn-javascript_builtins_regexp_flags">not supported by Internet Explorer</a> at all.</p>
+<pre class="language-javascript"><code class="language-javascript">if (RegExp.prototype.flags === undefined) {
+  Object.defineProperty(RegExp.prototype, 'flags', {
+    configurable: true,
+    get: function() {
+      return this.toString().match(/[gimuy]*$/)[0];
+    }
+  });
+}</code></pre>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/Rust/why_type_declarations_for_rust_constants_should_be_unnecessary.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/Python/a_guide_to_pythons_data_types.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>

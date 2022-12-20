@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A guide to Python's data types | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="python,python3,cheat,sheet,data,type,conversion,integer,float,string,list,tuple,set,dictionary,types" />
+<meta name="pagename" content="A guide to Python's data types | Malekaia" />
+<meta name="description" content="A quick and easy cheat sheet for data types in python" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="A guide to Python's data types | Malekaia" />
+<meta name="og:description" content="A quick and easy cheat sheet for data types in python" />
+<meta name="og:url" content="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="A guide to Python's data types | Malekaia" href="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/Python/a_guide_to_pythons_data_types.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="python,python3,cheat,sheet,data,type,conversion,integer,float,string,list,tuple,set,dictionary,types" />
+<meta name="category" content="Python" />
+<meta name="topic" content="Data Types" />
+<meta name="date" content="08&#x2F;06&#x2F;2022" />
+<meta name="pagename" content="A guide to Python&#x27;s data types" />
+<meta name="title" content="A guide to Python&#x27;s data types" />
+<meta name="description" content="A quick and easy cheat sheet for data types in python" />
+<meta name="abstract" content="A quick and easy cheat sheet for data types in python" />
+<meta name="summary" content="A quick and easy cheat sheet for data types in python" />
+<meta name="subtitle" content="A quick and easy cheat sheet for data types in python" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;Python&#x2F;a_guide_to_pythons_data_types.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;Python&#x2F;a_guide_to_pythons_data_types.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main me-2" href="/portfolio/">Portfolio</a>
+<a class="link-dark link-main" href="/about/">About</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=guide" class="link-brand">Guide</a> &sol; <a href="/articles/#category=python" class="link-brand">Python</a> &sol; Data Types</p>
+<h2 class="mb-2">A guide to Python's data types</h2>
+<p class="lead mb-3">A quick and easy cheat sheet for data types in python</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 08/06/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/python.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Integers and floats:</h3>
+<p>The <code>int</code> data type contains an integer / whole number:</p>
+<pre class="language-python"><code class="language-python">print(10)</code></pre>
+<p>Floats contain numbers with decimal points:</p>
+<pre class="language-python"><code class="language-python">print(5.7)</code></pre>
+<p>To convert an <code>int</code> to a <code>float</code> or vice-versa you would use the <code>int</code> and <code>float</code> functions, like this:</p>
+<pre class="language-python"><code class="language-python">print(int(5.7))
+print(float(10))</code></pre>
+<h3 class="text-title">Strings:</h3>
+<p>Strings are collections of one or more characters enclosed in single or double quotes:</p>
+<pre class="language-python"><code class="language-python">print('M')
+print("Hello World!")</code></pre>
+<p>To create a multi-line string, use three single or double quotes:</p>
+<pre class="language-python"><code class="language-python">multi_line = """this is
+a multi-line
+string"""</code></pre>
+<h3 class="text-title">Lists:</h3>
+<p>Lists, just like strings are collections:</p>
+<pre class="language-python"><code class="language-python">letters = ["a", "b", "c"]</code></pre>
+<p>These collections can contain values of different types:</p>
+<pre class="language-python"><code class="language-python">letters_and_numbers = ["a", 2, "c", 4.3, "d", 6.2]</code></pre>
+<p>To get the values of a list you would place square brackets after the list or list variable and specify the index of the item you want to get inside them:</p>
+<pre class="language-python"><code class="language-python">print(letters[0])</code></pre>
+<p>List indexes begin with zero, so in this example <code>letters&#91;0&#93;</code> would return <code>a</code> and <code>letters&#91;1&#93;</code> would return <code>b</code>.</p>
+<p>You could also get a string character at a specific index using the same syntax:</p>
+<pre class="language-python"><code class="language-python">name = "Alex"
+print(name[0], name[1], name[2], name[3], sep = ":")</code></pre>
+<h3 class="text-title">Tuples:</h3>
+<p>Tuples are immutable lists, which means you can't modify the values of a tuple after you've defined it.</p>
+<pre class="language-python"><code class="language-python">tu = (12, 9.3, "Alex", "Adam")
+print(tu[0], tu[1])</code></pre>
+<p>To get the length of a list, string or tuple you would use the len function, like this:</p>
+<pre class="language-python"><code class="language-python">print(len(letters_and_numbers))
+print(len(name))
+print(len(tu))</code></pre>
+<h3 class="text-title">Sets:</h3>
+<p>Another <i>&quot;list-like&quot;</i> data type is <code>set</code>, which allows you to define lists that can't contain duplicate values. Unlike other data types, a <code>set</code> isn't defined by a specific syntax, but rather a <a href="https://docs.python.org/3/tutorial/classes.html#classes">class type</a>.</p>
+<pre class="language-python"><code class="language-python">print(set(["a", "a", "b", "c", "c", "c"]))
+# output: set(["a", "b", "c"])
+</code></pre>
+<p>And they also allow you to get rid of duplicates from existing lists:</p>
+<pre class="language-python"><code class="language-python">stuff = [12, 9.3, "World", "World"]
+stuff = set(stuff)
+# output: set([12, 9.3, "World"])</code></pre>
+<h3 class="text-title">Dictionaries:</h3>
+<p>And the final data type I'll be covering in this lesson is <code>dict</code>, which is short for <i>&quot;dictionary&quot;</i>.</p>
+<p>This data type stores <code>key: value</code> pairs which are separated by a comma, the keys are strings and the values can be of any type.</p>
+<p>For example, let's create a simple dictionary that contains every data type we've learned about so far:</p>
+<pre class="language-python"><code class="language-python">types = {
+  "integer": 15,
+  "float": 23.6,
+  "string": "Hello World!",
+  "multi-line-string": """this is a
+  multi-line string""",
+  "list": ["a", "b", "c"],
+  "tuple": ("John", "Jones", "James", "Jim"),
+  "set": set(["a", "b", "c", "c", "c"])
+}</code></pre>
+<p>To get a value from a dictionary, you would - once again - use the square brackets, but this time instead of specifying a numbered index you would specify the key of the value you want, for example, let's print the string key, which has a value of <code>Hello World!</code>:</p>
+<pre class="language-python"><code class="language-python">print(types["string"])</code></pre>
+<p>To delete a key from a dictionary, you would use the del keyword:</p>
+<pre class="language-python"><code class="language-python">del types["float"]
+print(types)</code></pre>
+<h3 class="text-title">Type conversion:</h3>
+<p>As demonstrated in the <b><i>"Integers and floats"</i></b> section, you can use methods like <code>str</code>, <code>list</code> and <code>tuple</code> to convert an value from one type to another:</p>
+<pre class="language-python"><code class="language-python"># Convert an integer into a string:
+print(str(10))
+
+# Convert a float (decimal) into a string:
+print(str(10.1))
+
+# Convert a list into a tuple:
+print(list(name))
+
+# Convert a tuple into a list:
+print(list(tu))
+
+# Convert a string into a tuple:
+print(tuple(name))
+
+# Convert a list into a tuple:
+print(tuple(letters))</code></pre>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/JavaScript/how_to_modify_regexp_flags.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/Rust/a_brief_introduction_to_memory_management_in_rust.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>

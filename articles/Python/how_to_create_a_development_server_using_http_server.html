@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to create a development server using HTTP Server | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="how,to,create,a,development,server,using,http,server,python" />
+<meta name="pagename" content="How to create a development server using HTTP Server | Malekaia" />
+<meta name="description" content="Using http.server for testing in development mode" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="How to create a development server using HTTP Server | Malekaia" />
+<meta name="og:description" content="Using http.server for testing in development mode" />
+<meta name="og:url" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="How to create a development server using HTTP Server | Malekaia" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="how,to,create,a,development,server,using,http,server,python" />
+<meta name="category" content="Python" />
+<meta name="topic" content="Development Servers" />
+<meta name="date" content="13&#x2F;05&#x2F;2022" />
+<meta name="pagename" content="How to create a development server using HTTP Server" />
+<meta name="title" content="How to create a development server using HTTP Server" />
+<meta name="description" content="Using http.server for testing in development mode" />
+<meta name="abstract" content="Using http.server for testing in development mode" />
+<meta name="summary" content="Using http.server for testing in development mode" />
+<meta name="subtitle" content="Using http.server for testing in development mode" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;Python&#x2F;how_to_create_a_development_server_using_http_server.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;Python&#x2F;how_to_create_a_development_server_using_http_server.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main me-2" href="/portfolio/">Portfolio</a>
+<a class="link-dark link-main" href="/about/">About</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=guide" class="link-brand">Guide</a> &sol; <a href="/articles/#category=python" class="link-brand">Python</a> &sol; Development Servers</p>
+<h2 class="mb-2">How to create a development server using HTTP Server</h2>
+<p class="lead mb-3">Using http.server for testing in development mode</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 13/05/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/python.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Introduction:</h3>
+<p>The <a href="https://docs.python.org/3/library/">Python standard library</a> comes pre-installed with a module called <a href="https://docs.python.org/3/library/http.server.html">http.server</a>, which you can use to create a development server for your project.</p>
+<p>The <code>http.server</code> module gives us an easy way to start a development server for a static directory without modifying a project's source code.</p>
+<blockquote>
+<p class="m-0"><b>Warning</b>: <code>http.server</code> is not recommended for production. It only implements basic security checks.</p>
+<footer>Python, <a href="https://docs.python.org/3/library/http.server.html">http.server</a></footer>
+</blockquote>
+<h3 class="text-title">Starting the development server:</h3>
+<p>First, <a href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> into the root directory of your static website:</p>
+<pre class="language-shell"><code class="language-shell">cd ./path/to/root/
+</code></pre>
+<p>Then call the <code>python3</code> command with the <a href="https://docs.python.org/3/using/cmdline.html#cmdoption-m">--module-name</a> (-m) flag and enter the <code>http.server</code> module:</p>
+<pre class="language-shell"><code class="language-shell">python3 -m http.server
+</code></pre>
+<p>Finally, open a web browser and visit <a href="http://localhost:8000">http://localhost:8000</a> or <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. You should see the <code>index.html</code> in the root directory or a directory browser for the root directory (if there is no <code>index.html</code> in the root folder).</p>
+<p><b>Note</b>: Read <a href="https://superuser.com/a/949522">this post</a> for more information about the difference between the <code>0.0.0.0</code> and <code>127.0.0.1</code> IP addresses.</p>
+<h3 class="text-title">Changing the port:</h3>
+<p>That number you see at the end of the localhost URL (<code>8000</code>) specifies the port. Receiving servers use port numbers to decide which process to forward specific network messages to, and all networked devices have standardised port numbers.</p>
+<p>Certain port numbers are reserved for a specific protocol or function. For example, HTTP/HTTPS messages are usually forwarded to port 80 or a port number beginning with 80.</p>
+<p>If you'd like to change the port, add the port number you'd like to use to the end of the shell command:</p>
+<pre class="language-shell"><code class="language-shell">python3 -m http.server 8080
+</code></pre>
+<p>Now you'd visit the same URL with the port number we specified (<a href="http://localhost:7000">http://localhost:8080</a>) instead of the default <code>http://localhost:8000</code>.</p>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/Sass/how_to_extend_parent_selectors_in_sass.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Environment detection in JavaScript | Malekaia</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="subject" content="Computer Programming" />
+<meta name="copyright" content="@Malekaia" />
+<meta name="language" content="en-GB" />
+<meta name="robots" content="index,follow" />
+<meta name="author" content="Malekai" />
+<meta name="url" content="https://malekaia.github.io" />
+<meta name="identifier-URL" content="https://malekaia.github.io" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="target" content="all" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="medium" content="blog" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="off" />
+<meta name="og:site_name" content="Malekaia" />
+<meta name="application-name" content="Malekaia" />
+<meta name="og:locality" content="London" />
+<meta name="og:region" content="England" />
+<meta name="og:country-name" content="UK" />
+<meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
+<meta name="date" content="25/11/2022" />
+<meta name="keywords" content="environment,detection,in,javascript,node.js,environment,detection" />
+<meta name="pagename" content="Environment detection in JavaScript | Malekaia" />
+<meta name="description" content="How to enable conditional code for specific environments" />
+<meta name="syndication-source" content="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<meta name="original-source" content="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="Environment detection in JavaScript | Malekaia" />
+<meta name="og:description" content="How to enable conditional code for specific environments" />
+<meta name="og:url" content="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<meta name="og:locale" content="en_GB" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+<link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
+<link rel="logo" type="image/png" href="/images/favicon.png" />
+<link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
+<link rel="bookmark" title="Environment detection in JavaScript | Malekaia" href="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<link rel="publisher" href="https://twitter.com/Melekaia" />
+<link rel="canonical" href="https://malekaia.github.io/articles/JavaScript/environment_detection_in_javascript.html" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
+<link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?version=3.111.0"></script>
+<script type="text/javascript" src="/scripts/lib/masonry-4.2.2.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/prism-1.28.0.min.js"></script>
+<script type="text/javascript" src="/scripts/lib/dove.js"></script>
+<script type="text/javascript" src="/scripts/lib/modal.js"></script>
+<script type="text/javascript" src="/scripts/global.js"></script>
+<meta name="keywords" content="environment,detection,in,javascript,node.js,environment,detection" />
+<meta name="category" content="JavaScript" />
+<meta name="topic" content="Environments" />
+<meta name="date" content="12&#x2F;04&#x2F;2022" />
+<meta name="pagename" content="Environment detection in JavaScript" />
+<meta name="title" content="Environment detection in JavaScript" />
+<meta name="description" content="How to enable conditional code for specific environments" />
+<meta name="abstract" content="How to enable conditional code for specific environments" />
+<meta name="summary" content="How to enable conditional code for specific environments" />
+<meta name="subtitle" content="How to enable conditional code for specific environments" />
+<meta name="syndication-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;environment_detection_in_javascript.html" />
+<meta name="original-source" content="&#x2F;articles&#x2F;JavaScript&#x2F;environment_detection_in_javascript.html" />
+<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
+<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
+</head>
+<body>
+<nav id="main-top" class="py-5 w-100">
+<section class="container d-flex justify-content-between align-items-center">
+<a href="/" class="link-dark font-brand"><span class="text-brand">M</span>alekaia</a>
+<section class="d-none d-md-inline">
+<a class="link-dark link-main me-2" href="/articles/">Articles</a>
+<a class="link-dark link-main me-2" href="/portfolio/">Portfolio</a>
+<a class="link-dark link-main" href="/about/">About</a>
+</section>
+<aside>
+<a class="me-2 d-none d-md-inline" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="me-2 d-none d-md-inline" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="text-dark d-md-none toggle-mobile-nav fs-4 fw-bold"><i class="bi bi-list"></i></a>
+</aside>
+</section>
+</nav>
+<nav id="side" class="position-fixed bg-white shadow-sm">
+<main class="h-100 d-flex flex-column justify-content-between">
+<div class="py-5 container text-end">
+<i class="bi bi-x-lg cursor-pointer toggle-mobile-nav"></i>
+</div>
+<div class="row px-4 my-auto">
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/articles/">Articles</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=tutorial">Tutorials</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=guide">Guides</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=opinion">Opinion Pieces</a>
+<a class="link-secondary link-main d-block" href="/articles/#genre=misc">Miscellaneous</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/portfolio/">Portfolio</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#projects">Projects</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#stackoverflow">StackOverflow</a>
+<a class="link-secondary link-main d-block" href="/portfolio/#licencing">Licencing</a>
+</figure>
+<figure class="mb-4">
+<a class="link-brand link-main d-block h5 pb-1 mb-2 border-bottom border-muted" href="/about/">About</a>
+<a class="link-secondary link-main d-block" href="/about/#overview">Overview</a>
+<a class="link-secondary link-main d-block" href="/about/#contact">Contact</a>
+</figure>
+</div>
+<div class="py-5 px-4 d-flex justify-content-between">
+<a class="link-dark me-1" href="https://github.com/Malekaia"><i class="bi bi-github"></i></a>
+<a class="link-dark me-1" href="https://stackoverflow.com/users/10415695/malekai"><i class="bi bi-stack-overflow"></i></a>
+<a class="link-dark me-1" href="https://twitter.com/Melekaia"><i class="bi bi-twitter"></i></a>
+<a class="link-dark me-1" href="https://www.reddit.com/user/Malekaia"><i class="bi bi-reddit"></i></a>
+<a class="link-dark" href="/"><i class="bi bi-house-fill"></i></a>
+</div>
+</main>
+</nav>
+<header class="container py-5">
+<p class="mb-3"><a href="/articles/#genre=tutorial" class="link-brand">Tutorial</a> &sol; <a href="/articles/#category=javascript" class="link-brand">JavaScript</a> &sol; Environments</p>
+<h2 class="mb-2">Environment detection in JavaScript</h2>
+<p class="lead mb-3">How to enable conditional code for specific environments</p>
+<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 12/04/2022 &bull; <span class="estimated-read-time"></span></small>
+</header>
+<main class="container py-5">
+<div class="row">
+<aside class="col-12 col-lg-3 mb-5 mb-lg-0">
+<div class="row">
+<section class="col-5 col-sm-6 col-lg-12 order-2 order-lg-1 mb-0 mb-lg-5">
+<figure class="w-100 h-100 m-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+<img id="language-icon" class="img-fluid" src="/images/icons/javascript.png" alt="" />
+</figure>
+</section>
+<section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
+<h5 class="mb-2">Contents:</h5>
+<section id="table-of-contents"></section>
+</section>
+</div>
+</aside>
+<article class="col-12 col-lg-9" id="article-template">
+<h3 class="text-title">Introduction:</h3>
+<p>Environment detection in JavaScript depends on what features of the target environment you plan on using. There's no point in detecting the Node.js environment if you only plan on cross-platform features like the <code>console</code> or <code>Error</code> objects. There's also no point in searching for the <code>window</code> and <code>document</code> objects if you don't plan on using them. That's why the first step to environment detection is determining <i>why</i> you need it in the first place.</p>
+<p>As mentioned before, JavaScript has many cross-platform objects. You can't accurately identify the current environment unless there is some known unique feature of the target environment only used by that environment. The second step is to identify specific objects to check for, or you'll end up misidentifying the environment.</p>
+<h3 class="text-title">The wrong way:</h3>
+<h5 class="text-title">Using libraries:</h5>
+<p>A general rule is to not search for the existence of libraries:</p>
+<pre class="language-javascript"><code class="language-javascript">if (jQuery !== undefined) {
+  console.log("This is the browser");
+}</code></pre>
+<p>Developers can always include dependencies after the fact.</p>
+<h5 class="text-title">Using variables:</h5>
+<p>This is one of the more ridiculous ones I've seen:</p>
+<pre class="language-javascript"><code class="language-javascript">/* SCRIPT 1: */
+const node =  true;
+// or:
+node = true;
+// or:
+global.node = true;
+
+/* SCRIPT 2: */
+if (typeof node === true) {
+  console.log("Hello, Node.js!");
+}</code></pre>
+<p>Variables - global or otherwise - aren't environment-dependent! A variable defined in any environment will always have the same value unless you provide conditions to alter its value or make future updates.</p>
+<h3 class="text-title">The right way:</h3>
+<h5 class="text-title">Searching for the process object:</h5>
+<p>The browser doesn't have a <a href="https://nodejs.org/api/process.html#process">process</a> object built in, we can search for it to determine if we're in a Node.js environment or not.</p>
+<pre class="language-javascript"><code class="language-javascript">if (typeof process === "object") {
+  console.log("You are using Node.js");
+} else {
+  console.log("You are not using Node.js");
+}</code></pre>
+<h5 class="text-title">Searching for the window.document or module.exports:</h5>
+<p>Node.js doesn't have a <code>window</code> or <code>window.document</code> object, and browsers don't have a <code>module</code> or <code>module.exports</code> object by default:</p>
+<pre class="language-javascript"><code class="language-javascript">// Browser:
+if (typeof window !== "undefined" &amp;&amp; typeof window.document !== "undefined") {
+  console.log("You are using a browser");
+}
+
+// Node.js:
+if (typeof module === "object" &amp;&amp; typeof module.exports === "object") {
+  console.log("You are using Node.js");
+}</code></pre>
+<h3 class="text-title">Closing thoughts:</h3>
+<p>While I understand that there sometimes is a need for environment detection, you should consider if it is the best option for you. Remember, you can always separate the source code for each environment into separate scripts instead.</p>
+<blockquote>
+<p class="m-0">Separation of concerns is a principle used in programming to separate an application into units, with minimal overlapping between the functions of the individual units. The separation of concerns is achieved using modularization, encapsulation and arrangement in software layers.</p>
+<footer>SAP Help Portal, <a href="https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/abenseperation_concerns_guidl.htm">Separation of Concerns</a></footer>
+</blockquote>
+<p>Thank you for reading.</p>
+<footer class="d-flex justify-content-between mt-5">
+<a class="link-primary" href="/articles/Perl/how_to_call_a_subprocess_in_perl.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
+<a class="link-primary" href="/articles/JavaScript/how_to_select_sibling_elements_using_javascript.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+</footer>
+</article>
+</div>
+</main>
+<footer class="text-muted container py-5">
+<small class="cursor-help" title="All rights reserved, unless explicitly attributed or stated otherwise">&copy;Malekaia (2019 - 2022)</small>
+</footer>
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-CNBV1Q2XXK" async></script>
+<script type="text/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-CNBV1Q2XXK");</script>
+</body>
+</html>
