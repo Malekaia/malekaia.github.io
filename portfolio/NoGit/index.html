@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>How to create a development server using HTTP Server | Malekaia</title>
+<title>NoGit | Malekaia</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,15 +31,15 @@
 <meta name="og:country-name" content="UK" />
 <meta name="google-site-verification" content="sK2SxeIjkab0AD30O9-lqivYYc0qVW21tnFtGVWsWJc" />
 <meta name="date" content="25/11/2022" />
-<meta name="keywords" content="how,to,create,a,development,server,using,http,server,python" />
-<meta name="pagename" content="How to create a development server using HTTP Server | Malekaia" />
-<meta name="description" content="Using http.server for testing in development mode" />
-<meta name="syndication-source" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
-<meta name="original-source" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<meta name="keywords" content="aims,architecture,archive,bootstrap,complete,css,culture,curated,design,environments,expressions,flask,git,github,go,goals,guides,html,javascript,jquery,js,lang,list,malekaia,management,media,module,motivation,node,open,perl,pip,posts,programming,project,projects,published,python,regular,related,sass,scss,shell,source,tutorials,ui,urban,utilities,ux,web" />
+<meta name="pagename" content="NoGit | Malekaia" />
+<meta name="description" content="A repetition free CLI for git, NoGit is a python script that prevents unnecessary repetition of the "git" keyword." />
+<meta name="syndication-source" content="https://malekaia.github.io/portfolio/NoGit/" />
+<meta name="original-source" content="https://malekaia.github.io/portfolio/NoGit/" />
 <meta name="og:type" content="article" />
-<meta name="og:title" content="How to create a development server using HTTP Server | Malekaia" />
-<meta name="og:description" content="Using http.server for testing in development mode" />
-<meta name="og:url" content="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<meta name="og:title" content="NoGit | Malekaia" />
+<meta name="og:description" content="A repetition free CLI for git, NoGit is a python script that prevents unnecessary repetition of the "git" keyword." />
+<meta name="og:url" content="https://malekaia.github.io/portfolio/NoGit/" />
 <meta name="og:locale" content="en_GB" />
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -47,11 +47,11 @@
 <link rel="fluid-icon" type="image/png" href="/images/favicon.png" />
 <link rel="logo" type="image/png" href="/images/favicon.png" />
 <link rel="me" type="text/html" href="https://twitter.com/Melekaia" />
-<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link rel="self" type="application/atom+xml" href="https://malekaia.github.io/portfolio/NoGit/" />
 <link rel="index" title="Logical Branch" href="https://malekaia.github.io" />
-<link rel="bookmark" title="How to create a development server using HTTP Server | Malekaia" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link rel="bookmark" title="NoGit | Malekaia" href="https://malekaia.github.io/portfolio/NoGit/" />
 <link rel="publisher" href="https://twitter.com/Melekaia" />
-<link rel="canonical" href="https://malekaia.github.io/articles/Python/how_to_create_a_development_server_using_http_server.html" />
+<link rel="canonical" href="https://malekaia.github.io/portfolio/NoGit/" />
 <link type="text/css" rel="stylesheet" href="/styles/lib/bootstrap-5.2.0.min.css" />
 <link type="text/css" rel="stylesheet" href="/styles/lib/prism-1.28.0.css" />
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen:400|Work+Sans:400,600,700|Inter:400,700,800|IBM+Plex+Mono:400,600,800" />
@@ -62,21 +62,8 @@
 <script type="text/javascript" src="/scripts/lib/dove.js"></script>
 <script type="text/javascript" src="/scripts/lib/modal.js"></script>
 <script type="text/javascript" src="/scripts/global.js"></script>
-<meta name="keywords" content="how,to,create,a,development,server,using,http,server,python" />
-<meta name="category" content="Python" />
-<meta name="topic" content="Development Servers" />
-<meta name="date" content="13&#x2F;05&#x2F;2022" />
-<meta name="pagename" content="How to create a development server using HTTP Server" />
-<meta name="title" content="How to create a development server using HTTP Server" />
-<meta name="description" content="Using http.server for testing in development mode" />
-<meta name="abstract" content="Using http.server for testing in development mode" />
-<meta name="summary" content="Using http.server for testing in development mode" />
-<meta name="subtitle" content="Using http.server for testing in development mode" />
-<meta name="syndication-source" content="&#x2F;articles&#x2F;Python&#x2F;how_to_create_a_development_server_using_http_server.html" />
-<meta name="original-source" content="&#x2F;articles&#x2F;Python&#x2F;how_to_create_a_development_server_using_http_server.html" />
-<link type="text/css" rel="stylesheet" href="/styles/articles.css" />
+<link type="text/css" rel="stylesheet" href="/styles/portfolio.css" />
 <script type="text/javascript" src="/scripts/components/table-of-contents.js"></script>
-<script type="text/javascript" src="/scripts/components/estimated-read-time.js"></script>
 </head>
 <body>
 <nav id="main-top" class="py-5 w-100">
@@ -131,10 +118,14 @@
 </main>
 </nav>
 <header class="container py-5">
-<p class="mb-3"><a href="/articles/#genre=guide" class="link-brand">Guide</a> &sol; <a href="/articles/#category=python" class="link-brand">Python</a> &sol; Development Servers</p>
-<h2 class="mb-2">How to create a development server using HTTP Server</h2>
-<p class="lead mb-3">Using http.server for testing in development mode</p>
-<small>By <a class="text-brand" href="https://stackoverflow.com/users/10415695/malekai" title="Malekai">Malekaia</a> &bull; 13/05/2022 &bull; <span class="estimated-read-time"></span></small>
+<p class="mb-3">Python &sol; Git</p>
+<h2 class="mb-2">NoGit</h2>
+<p class="lead mb-3">A repetition free CLI for git, NoGit is a python script that prevents unnecessary repetition of the "git" keyword.</p>
+<small>
+<a href="/portfolio/NoGit/" class="link-dark me-2"><i class="bi bi-box-fill"></i></a>
+<a href="https://github.com/Malekaia/NoGit" class="link-dark me-2"><i class="bi bi-github"></i></a>
+<a href="/portfolio/NoGit/" class="link-dark"><i class="bi bi-bookmarks-fill"></i></a>
+</small>
 </header>
 <main class="container py-5">
 <div class="row">
@@ -146,38 +137,96 @@
 </figure>
 </section>
 <section class="col-7 col-sm-6 col-lg-12 order-1 order-lg-2">
-<h5 class="mb-2">Contents:</h5>
+<h5 class="mb-2">Table of contents:</h5>
 <section id="table-of-contents"></section>
 </section>
 </div>
 </aside>
 <article class="col-12 col-lg-9" id="article-template">
 <h3 class="text-title">Introduction:</h3>
-<p>The <a href="https://docs.python.org/3/library/">Python standard library</a> comes pre-installed with a module called <a href="https://docs.python.org/3/library/http.server.html">http.server</a>, which you can use to create a development server for your project.</p>
-<p>The <code>http.server</code> module gives us an easy way to start a development server for a static directory without modifying a project's source code.</p>
-<blockquote>
-<p class="m-0"><b>Warning</b>: <code>http.server</code> is not recommended for production. It only implements basic security checks.</p>
-<footer>Python, <a href="https://docs.python.org/3/library/http.server.html">http.server</a></footer>
-</blockquote>
-<h3 class="text-title">Starting the development server:</h3>
-<p>First, <a href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> into the root directory of your static website:</p>
-<pre class="language-shell"><code class="language-shell">cd ./path/to/root/
+<p><a href="https://github.com/Malekaia/NoGit">NoGit</a> is a Python script that prevents the unnecessary repetition of the git keyword. It opens a shell CLI where you can input git commands without typing the <code>git</code> keyword before every instruction. I wrote this script as <a href="https://stackoverflow.com/a/56528842/10415695">an answer</a> to <a href="https://stackoverflow.com/q/56505000/10415695">a question</a> on StackOverflow.</p>
+<p>After calling ./nogit, a CLI (similar to the <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-commands.html">MySQL shell</a>) should appear:</p>
+<pre lang="shell">git&gt;
+</pre>
+<p><b>Note</b>: Given that NoGit is a wrapper around Git, it provides all of the features of the <a href="https://git-scm.com/">Git VCS</a>.</p>
+<h3 class="text-title">Documentation:</h3>
+<ul>
+<li><code>%undo</code> deletes the last command from the stack</li>
+<li><code>%run</code> executes all commands in the stack and deletes it when done</li>
+<li><code>%exit</code> closes the CLI without doing anything</li>
+<li><code>ctrl+c</code> has the same effect as executing <code>%run; %exit</code> or <code>%run</code> and <code>%exit</code></li>
+<li>Command history gets saved to a file called <code>nogit.history</code> in the same folder as the script</li>
+<li>You can add multiple commands in one line using a semi-colon</li>
+<li>You can use the <code>git</code> keyword because the script doesn't add the <code>git</code> keyword if it already exists</li>
+</ul>
+<h3 class="text-title">Demonstration:</h3>
+<ol>
+<li><code>init</code></li>
+<li><code>add -A</code></li>
+<li><code>stage -A</code></li>
+<li><code>status</code></li>
+<li><code>commit -m &quot;initial commit&quot;</code></li>
+<li><code>%run; %exit</code></li>
+</ol>
+<h3 class="text-title">Installation:</h3>
+<p>To run NoGit, you need <a href="https://www.python.org/downloads/">Python 3</a> installed on your system. You can download it from the official <a href="https://github.com/Malekaia/NoGit">Github Repository</a> or copy the source code below.</p>
+<p><b>Note</b>: The script depends on the <a href="https://docs.python.org/3/library/sys.html">sys</a>, <a href="https://docs.python.org/3/library/os.html">os</a>, <a href="https://docs.python.org/3/library/signal.html">signal</a>, <a href="https://docs.python.org/3/library/atexit.html">atexit</a>, <a href="https://docs.python.org/3/library/readline.html">readline</a> and <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> modules.</p>
+<h3 class="text-title">Installation notes (Linux):</h3>
+<p>If you want you can remove the <code>.py</code> extension and convert it into an executable:</p>
+<pre class="language-shell"><code class="language-shell">mv nogit.py nogit
+chmod +x ./nogit
+./nogit # open the NoGit CLI
 </code></pre>
-<p>Then call the <code>python3</code> command with the <a href="https://docs.python.org/3/using/cmdline.html#cmdoption-m">--module-name</a> (-m) flag and enter the <code>http.server</code> module:</p>
-<pre class="language-shell"><code class="language-shell">python3 -m http.server
+<p>You can also move this script to your <code>./bin/</code> directory and create an alias for it to run it without a <code>./</code>:</p>
+<pre class="language-shell"><code class="language-shell">sudo cp ./nogit /bin/nogit
+sudo chmod +x /bin/nogit
+alias nogit="/bin/nogit"
 </code></pre>
-<p>Finally, open a web browser and visit <a href="http://localhost:8000">http://localhost:8000</a> or <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. You should see the <code>index.html</code> in the root directory or a directory browser for the root directory (if there is no <code>index.html</code> in the root folder).</p>
-<p><b>Note</b>: Read <a href="https://superuser.com/a/949522">this post</a> for more information about the difference between the <code>0.0.0.0</code> and <code>127.0.0.1</code> IP addresses.</p>
-<h3 class="text-title">Changing the port:</h3>
-<p>That number you see at the end of the localhost URL (<code>8000</code>) specifies the port. Receiving servers use port numbers to decide which process to forward specific network messages to, and all networked devices have standardised port numbers.</p>
-<p>Certain port numbers are reserved for a specific protocol or function. For example, HTTP/HTTPS messages are usually forwarded to port 80 or a port number beginning with 80.</p>
-<p>If you'd like to change the port, add the port number you'd like to use to the end of the shell command:</p>
-<pre class="language-shell"><code class="language-shell">python3 -m http.server 8080
+<p>Alternatively you can copy the following command into your CLI:</p>
+<pre class="language-shell"><code class="language-shell">sudo cp ./nogit /bin/nogit && sudo chmod +x /bin/nogit && alias nogit='/bin/nogit'
 </code></pre>
-<p>Now you'd visit the same URL with the port number we specified (<a href="http://localhost:7000">http://localhost:8080</a>) instead of the default <code>http://localhost:8000</code>.</p>
+<h3 class="text-title">Source code:</h3>
+<p>To install NoGit locally, copy and paste the following source code into a file named <code>nogit.py</code>.</p>
+<pre class="language-python"><code class="language-python">#!/usr/bin/env python
+import sys, os, signal, atexit, readline, subprocess
+
+commands, stop, history_file = [], False, os.path.join(os.getcwd(), "nogit.history")
+
+def run_commands():
+  stop = True
+  for cmd in commands:
+    command = ["git" if not cmd.startswith("git ") else ""]
+    command = [cmd] if command[0] == "" else [command[0], cmd]
+    subprocess.Popen(command).communicate()
+    commands = []
+
+def signal_handler(sig, frame):
+  run_commands()
+  sys.exit(0)
+
+try:
+  readline.read_history_file(history_file)
+  signal.signal(signal.SIGINT, signal_handler)
+  while True:
+    if stop == True:
+      break
+    command = input("git&gt; ")
+    if command == "%undo":
+      commands.pop()
+    elif command == "%run":
+      run_commands()
+    elif command == "%exit":
+      sys.exit(0)
+    else:
+      commands += [cmd.strip() for cmd in command.split(";")]
+  signal.pause()
+  readline.set_history_length(-1)
+except IOError:
+  pass
+
+atexit.register(readline.write_history_file, history_file)</code></pre>
 <footer class="d-flex justify-content-between mt-5">
-<a class="link-primary" href="/articles/Sass/how_to_extend_parent_selectors_in_sass.html"><i class="bi bi-caret-left-fill"></i> PREV</a>
-<a class="link-primary" href="/articles/JavaScript/how_to_check_if_a_javascript_function_is_empty.html">NEXT <i class="bi bi-caret-right-fill"></i></a>
+<a class="link-primary" href="/portfolio/Hydra/"><i class="bi bi-caret-left-fill"></i> PREV</a>
 </footer>
 </article>
 </div>
