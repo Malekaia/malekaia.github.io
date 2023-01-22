@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://raw.githubusercontent.com/Malekaia/malekaia.github.io/main/sitemap.xml
